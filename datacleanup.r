@@ -15,3 +15,6 @@ moviesclean$title <- gsub( "&#39;", "'", moviesclean$title)
 
 #removing IMDB
 moviesclean$imdb <- NULL
+
+#removing 22
+moviesclean$title <- gsub("22", "21", moviesclean$title)
