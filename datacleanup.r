@@ -1,8 +1,8 @@
-# add packages
-library(tidyverse)
-library(shiny)
-library(ggplot2)
 
+# adding packages
+library(tidyverse)
+library(ggplot2)
+library(shiny)
 
 # download data
 movies <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/movies.csv")
@@ -10,7 +10,7 @@ movies <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/maste
 # data clean-up
 moviesclean <- movies
 moviesclean$title <- gsub("&amp;", "&", moviesclean$title)
-moviesclean$title <- gsub( "&#39", "'", moviesclean$title)
+moviesclean$title <- gsub( "&#39;", "'", moviesclean$title)
 
 #pushing to you
 
