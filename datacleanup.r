@@ -1,3 +1,8 @@
+# adding packages
+library(tidyverse)
+library(ggplot2)
+library(shiny)
+
 # download data
 movies <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/movies.csv")
 
