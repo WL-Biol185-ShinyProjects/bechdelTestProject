@@ -11,7 +11,6 @@ moviesclean <- movies
 moviesclean$title <- gsub("&amp;", "&", moviesclean$title)
 moviesclean$title <- gsub( "&#39;", "'", moviesclean$title)
 
-#pushing to you
 
 #removing IMDB
 moviesclean$imdb <- NULL
