@@ -26,6 +26,4 @@ moviesclean$title <- gsub("22", "21", moviesclean$title)
 moviesclean$test <- NULL
 
 #decade clarify
-moviesclean$`decade code` <-gsub("2", "2000's", moviesclean$`decade code`)
-moviesclean$`decade code` <-gsub("1", "2010's", moviesclean$`decade code`)
-moviesclean$`decade code` <-gsub("3", "1990's", moviesclean$`decade code`)
+moviescleanest <- mutate(moviesclean, 'decade code' = paste(as.character(floor(moviesclean$year/10) * 10), "s", sep = ""))
