@@ -18,3 +18,7 @@ moviesclean$imdb <- NULL
 
 #removing 22
 moviesclean$title <- gsub("22", "21", moviesclean$title)
+
+
+#remove test column
+moviesclean$test <- NULL
