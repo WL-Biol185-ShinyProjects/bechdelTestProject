@@ -26,3 +26,6 @@ moviesclean$test <- NULL
 moviesclean$`decade code` <-gsub("1", "2010's", moviesclean$`decade code`)
 moviesclean$`decade code` <-gsub("2$", "2000's", moviesclean$`decade code`)
 moviesclean$`decade code` <-gsub("3", "1990's", moviesclean$`decade code`)
+
+#fix Bruno
+moviesclean$title <- gsub("&uuml;" , "u", moviesclean$title)
