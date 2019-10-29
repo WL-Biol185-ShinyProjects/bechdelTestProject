@@ -24,3 +24,8 @@ moviesclean$title <- gsub("22", "21", moviesclean$title)
 
 #remove test column
 moviesclean$test <- NULL
+
+#decade clarify
+moviesclean$`decade code` <-gsub("2", "2000's", moviesclean$`decade code`)
+moviesclean$`decade code` <-gsub("1", "2010's", moviesclean$`decade code`)
+moviesclean$`decade code` <-gsub("3", "1990's", moviesclean$`decade code`)
