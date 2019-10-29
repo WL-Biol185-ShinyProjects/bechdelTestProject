@@ -29,3 +29,6 @@ moviesclean$`decade code` <-gsub("3", "1990's", moviesclean$`decade code`)
 
 #fix Bruno
 moviesclean$title <- gsub("&uuml;" , "u", moviesclean$title)
+
+#fix number 499
+moviesclean$title <- gsub("&agrave;" , "a" , moviesclean$title)
