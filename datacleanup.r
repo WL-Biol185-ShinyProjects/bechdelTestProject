@@ -36,3 +36,10 @@ moviescleanest$title <- gsub("&auml;" , "a" , moviesclean$title)
 
 #get rid of code column
 moviescleanest$code <- NULL
+
+
+#rename binary
+colnames(moviescleanest)[colnames(moviescleanest) == "binary"] <- "code"
+
+#rename clean_test
+colnames(moviescleanest)[colnames(moviescleanest) == "clean_test"] <- "reason"
