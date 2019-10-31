@@ -34,3 +34,5 @@ moviescleanest$title <- gsub("&agrave;" , "a" , moviesclean$title)
 moviescleanest$title <- gsub("&aring;" , "a" , moviesclean$title)
 moviescleanest$title <- gsub("&auml;" , "a" , moviesclean$title)
 
+#get rid of code column
+moviescleanest$code <- NULL
