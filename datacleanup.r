@@ -28,8 +28,17 @@ moviescleanest <- mutate(moviesclean, 'decade code' = paste(as.character(floor(m
 
 
 #fix accents
-moviesclean$title <- gsub("&uuml;" , "u", moviesclean$title)
-moviesclean$title <- gsub("&agrave;" , "a" , moviesclean$title)
-moviesclean$title <- gsub("&aring;" , "a" , moviesclean$title)
-moviesclean$title <- gsub("&auml;" , "a" , moviesclean$title)
+moviescleanest$title <- gsub("&uuml;" , "u", moviesclean$title)
+moviescleanest$title <- gsub("&agrave;" , "a" , moviesclean$title)
+moviescleanest$title <- gsub("&aring;" , "a" , moviesclean$title)
+moviescleanest$title <- gsub("&auml;" , "a" , moviesclean$title)
 
+#get rid of code column
+moviescleanest$code <- NULL
+
+
+#rename binary
+colnames(moviescleanest)[colnames(moviescleanest) == "binary"] <- "code"
+
+#rename clean_test
+colnames(moviescleanest)[colnames(moviescleanest) == "clean_test"] <- "reason"
