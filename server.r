@@ -1,4 +1,6 @@
 library(shiny)
+library(tidyverse)
+library(ggplot2)
 
 # Define UI for application that draws a histogram
 fluidPage(
