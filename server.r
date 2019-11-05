@@ -38,14 +38,7 @@ function(input, output) {
     
   
   
-
-<<<<<<< HEAD
-  })
+)
+  }
+)
 }
-=======
-  )}
-  
-  )
-  
-}
->>>>>>> dfe7c1e5690ddc3b217e5c11a3ac26764e90cb40
