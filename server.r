@@ -1,4 +1,5 @@
 library(shiny)
+library(ggplot2)
 
 # Define server logic required to draw a histogram
 function(input, output) {
@@ -20,8 +21,9 @@ function(input, output) {
     
 
     # draw the histogram with the specified number of bins
-    hist(movieData, breaks = range, col = 'darkgray', border = 'white')
-    
+   
+moviescleanest$budget %>%
+  ggplot(aes(budget) + geom_point())
   
   
 
