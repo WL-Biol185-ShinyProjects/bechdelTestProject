@@ -27,12 +27,7 @@ function(input, output) {
       max(425000000), 
     ),
     
-    sliderInput("range",
-                "Range:",
-                min   = 1000, 
-                max   = 10000000,
-                value = c(1500,100000)),
-     
+
     # draw the histogram with the specified number of bins
     hist(movieData, breaks = range, col = 'darkgray', border = 'white')
     

@@ -11,6 +11,11 @@ fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
+      sliderInput("range",
+                  "Ranges:",
+                  min = 7000,
+                  max = 425000000,
+                  value = 7000)
       
     ),
      
