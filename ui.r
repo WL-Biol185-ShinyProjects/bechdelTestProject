@@ -3,7 +3,7 @@ library(tidyverse)
 library(ggplot2)
 
 # Define UI for application that draws a histogram
-fluidPage(
+shinyUI(fluidPage(
   
   # Application title
   titlePanel("Bechdel Test Data"),
@@ -31,6 +31,7 @@ fluidPage(
       plotOutput("distPlot", hover = hoverOpts(id = "hovertitle")) , 
         textOutput("hoveredMovieInfo")
         
-    )
+     )
+   )
   )
 )

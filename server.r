@@ -9,7 +9,7 @@ library(ggplot2)
 
     # Application title
     titlePanel("Bechdel Test Data")
-  
+    
 
     # draw the histogram   
     moviescleanest %>%
