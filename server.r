@@ -7,17 +7,23 @@ library(ggplot2)
 
   output$distPlot <- renderPlot({
 
-  # Application title
-  titlePanel("Bechdel Test Data")
+    # Application title
+    titlePanel("Bechdel Test Data")
   
 
     # draw the histogram   
-   
-  moviescleanest %>%
-    ggplot(aes(year, budget)) + geom_point()
+    moviescleanest %>%
+      ggplot(aes(year, budget)) + geom_point()
 
-  hover <- input$"moviescleanest$title"
 
-  }
-)
+  })
+  
+  
+  output$hoveredMovieInfo <- renderText({
+    
+    input$hovertitle
+    brushedPoints(moviescleanest, xvar = "budget", yvar = NULL, input$hovertitle, allRows = FALSE)
+  })
+
+  
 }
