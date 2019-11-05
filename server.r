@@ -1,8 +1,8 @@
 library(shiny)
 library(ggplot2)
 
-# Define server logic required to draw a histogram
-function(input, output) {
+  # Define server logic required to draw a histogram
+  function(input, output) {
   
 
   output$distPlot <- renderPlot({
@@ -10,20 +10,12 @@ function(input, output) {
   # Application title
   titlePanel("Bechdel Test Data")
   
-
-    
-    # generate bins based on input$bins from ui.R
-    movieData    <- moviescleanest
-    range <- moviescleanest$budget(
-      min(7000),
-      max(425000000), 
-    )
     
 
-    # draw the histogram with the specified number of bins
+    # draw the histogram
    
-moviescleanest$budget %>%
-  ggplot(aes(budget) + geom_point())
+  moviescleanest %>%
+    ggplot(aes(budget)) + geom_histogram()
   
   
 
