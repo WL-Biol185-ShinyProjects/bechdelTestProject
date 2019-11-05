@@ -21,17 +21,17 @@ function(input, output) {
 
     
     # generate bins based on input$bins from ui.R
-    x    <- moviescleanest
+    x    <- moviescleanest,
     range <- moviescleanest$budget(
       min(x),
       max(x), 
-    )
+    ),
     
     sliderInput("range",
                 "Range:",
                 min   = 1000, 
                 max   = 10000000,
-                value = c(1500,100000))
+                value = c(1500,100000)),
      
     # draw the histogram with the specified number of bins
     hist(x, breaks = range, col = 'darkgray', border = 'white')
@@ -39,5 +39,13 @@ function(input, output) {
   
   
 
+<<<<<<< HEAD
   })
 }
+=======
+  )}
+  
+  )
+  
+}
+>>>>>>> dfe7c1e5690ddc3b217e5c11a3ac26764e90cb40
