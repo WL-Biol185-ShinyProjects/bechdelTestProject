@@ -12,7 +12,7 @@ library(ggplot2)
   
     
 
-    # draw the histogram
+    # draw the histogram   
    
   moviescleanest %>%
     ggplot(aes(budget)) + geom_histogram()
