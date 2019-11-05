@@ -14,10 +14,6 @@ library(ggplot2)
 
     # draw the histogram   
     moviescleanest %>%
-      filter(
-        budget ==
-        "Low Budget", "High Budget" 
-        ) %>%
       ggplot(aes(year, budget)) + geom_point()
 
 
