@@ -10,15 +10,6 @@ function(input, output) {
   titlePanel("Bechdel Test Data")
   
 
-data.frame(
-  
-name = c("Range"),
-  
-    )
-
-Value = as.character(c(paste(input$Range,collapse = ""
-                       )))
-
     
     # generate bins based on input$bins from ui.R
     movieData    <- moviescleanest
