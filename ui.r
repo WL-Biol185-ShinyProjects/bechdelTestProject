@@ -15,7 +15,7 @@ fluidPage(
                   "Low Budget:",
                   7000,
                   212000000,
-                  value = c(7000, 12000),
+                  value = c(11000000, 170000000),
                   step = 2500),
       
       sliderInput("budget",
