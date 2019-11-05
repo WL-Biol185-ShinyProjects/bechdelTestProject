@@ -15,9 +15,9 @@ library(ggplot2)
     # draw the histogram   
    
   moviescleanest %>%
-    ggplot(aes(budget)) + geom_histogram()
+    ggplot(aes(year, budget)) + geom_point()
   
-  
+  hover <- input$"moviescleanest$title"
 
   }
 )
