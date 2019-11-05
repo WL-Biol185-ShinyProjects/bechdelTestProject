@@ -17,7 +17,7 @@ function(input, output) {
                 min   = 1000, 
                 max   = 10000000,
                 value = c(1500,100000))
-    
+     
     # draw the histogram with the specified number of bins
     hist(x, breaks = range, col = 'darkgray', border = 'white')
     
