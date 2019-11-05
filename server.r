@@ -7,7 +7,7 @@ function(input, output) {
   output$distPlot <- renderPlot({
 
   # Application title
-  titlePanel("Bechdel Test Data"),
+  titlePanel("Bechdel Test Data")
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -39,5 +39,5 @@ function(input, output) {
   
   
 
-  )}
+  })
 }
