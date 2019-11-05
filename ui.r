@@ -5,6 +5,7 @@ library(ggplot2)
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
+  
   # Application title
   titlePanel("Bechdel Test Data"),
   
@@ -35,3 +36,12 @@ shinyUI(fluidPage(
    )
   )
 )
+
+
+  
+  
+  
+  
+  
+  
+  
