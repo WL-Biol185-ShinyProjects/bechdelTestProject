@@ -9,23 +9,23 @@ function(input, output) {
   # Application title
   titlePanel("Bechdel Test Data")
   
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("range",
-                  "Range:",
-                  min   = 1, 
-                  max   = 1000,
-                  value = c(200,500)),
-    ),
+data.frame(
+  
+name = c("Range"),
+  
+    )
+
+Value = as.character(c("Range",
+                       ))
+
 
     
     # generate bins based on input$bins from ui.R
-    movieData    <- moviescleanest,
+    movieData    <- moviescleanest
     range <- moviescleanest$budget(
       min(7000),
       max(425000000), 
-    ),
+    )
     
 
     # draw the histogram with the specified number of bins
@@ -33,7 +33,7 @@ function(input, output) {
     
   
   
-)
+
   }
 )
 }
