@@ -9,15 +9,6 @@ function(input, output) {
   # Application title
   titlePanel("Bechdel Test Data")
   
-data.frame(
-  
-name = c("Range"),
-  
-    )
-
-Value = as.character(c("Range",
-                       ))
-
 
     
     # generate bins based on input$bins from ui.R

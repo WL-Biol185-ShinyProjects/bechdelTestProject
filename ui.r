@@ -11,12 +11,19 @@ fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      sliderInput("range",
-                  "Ranges:",
-                  min = 7000,
-                  max = 425000000,
-                  value = 7000)
+      sliderInput("budget",
+                  "Low Budget:",
+                  7000,
+                  212000000,
+                  value = c(7000, 12000),
+                  step = 2500),
       
+      sliderInput("budget",
+                  "High Budget:",
+                  212000001,
+                  425000000,
+                  value = c(312000000, 412000000),
+                  step = 2500)
     ),
      
     # Show a plot of the generated distribution
