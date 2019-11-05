@@ -15,8 +15,8 @@ name = c("Range"),
   
     )
 
-Value = as.character(c("Range",
-                       ))
+Value = as.character(c(paste(input$Range,collapse = ""
+                       )))
 
 
     
