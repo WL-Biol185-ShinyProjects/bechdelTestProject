@@ -9,16 +9,6 @@ function(input, output) {
   # Application title
   titlePanel("Bechdel Test Data")
   
-
-data.frame(
-  
-name = c("Range"),
-  
-    )
-
-Value = as.character(c(paste(input$Range,collapse = ""
-                       )))
-
     
     # generate bins based on input$bins from ui.R
     movieData    <- moviescleanest
