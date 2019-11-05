@@ -11,11 +11,11 @@ fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
+      sliderInput("range",
+                  "Range:",
+                  min   = 1, 
+                  max   = 1000,
+                  value = c(200,500)),
     ),
     
     # Show a plot of the generated distribution
