@@ -4,6 +4,8 @@ library(ggplot2)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
+
+  
   
   
   # Application title
@@ -60,7 +62,7 @@ shinyUI(fluidPage(
         
      )
    )
-  )
+  
 
 
 
