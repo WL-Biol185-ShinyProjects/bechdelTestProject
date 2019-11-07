@@ -24,13 +24,15 @@ library(ggplot2)
     output$value <- renderPrint({ input$budget }) + geom_point()
 
 
-
   
 
   })
 
-  
+
+ 
   }
+  
+  
 
   
   
