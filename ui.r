@@ -63,16 +63,10 @@ library(ggplot2)
     
     
       
-    )
-        
+    ),
+    mainPanel(
+      plotOutput("distPlot", hover = hoverOpts(id = "hovertitle")) , 
+        textOutput("hoveredMovieInfo")
+
   )
-
-
-
-  
-  
-  
-  
-  
-  
-  
+)
