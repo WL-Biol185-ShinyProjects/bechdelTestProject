@@ -24,6 +24,20 @@ shinyUI(fluidPage(
                   212000001,
                   425000000,
                   value = c(312000000, 412000000),
+                  step = 2500),
+      
+      sliderInput("domgross",
+                  "Domestic Gross:",
+                  800,
+                  500000000,
+                  value = c(100000000, 200000000),
+                  step = 2500),
+      
+      sliderInput("intgross",
+                  "International Gross:",
+                  800,
+                  500000000,
+                  value = c(100000000, 200000000),
                   step = 2500)
     ),
      
