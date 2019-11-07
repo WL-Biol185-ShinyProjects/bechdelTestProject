@@ -23,15 +23,11 @@ library(ggplot2)
 
   })
   
-  
-  output$hoveredMovieInfo <- renderText({
-    
-    input$hovertitle
-    brushedPoints(moviescleanest, xvar = "budget", yvar = NULL, input$hovertitle, allRows = FALSE)
-  })
 
-  
+ 
   }
+  
+  
 
   
   
