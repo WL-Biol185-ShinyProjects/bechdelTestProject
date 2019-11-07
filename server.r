@@ -9,16 +9,17 @@ library(ggplot2)
   output$distPlot <- renderPlot({
 
     # Application title
-    titlePanel("Bechdel Test Data")
+      titlePanel("Bechdel Test Data")
     
 
     # draw the histogram   
       ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
       
-      # Reason for failure check boxes
+      
+    # Reason for failure check boxes
       output$value <- renderPrint({ input$checkFail })
       
-
+    
 
   })
   
