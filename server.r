@@ -13,8 +13,7 @@ library(ggplot2)
     
 
     # draw the histogram   
-    moviescleanest %>%
-      ggplot(aes(year, budget)) + geom_point()
+      ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
 
 
   })
