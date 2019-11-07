@@ -14,6 +14,10 @@ library(ggplot2)
 
     # draw the histogram   
       ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
+      
+      # Reason for failure check boxes
+      output$value <- renderPrint({ input$checkFail })
+      
 
 
   })
