@@ -15,7 +15,7 @@ library(ggplot2)
 
 
     # Application title
-    titlePanel("Bechdel Test Data")
+      titlePanel("Bechdel Test Data")
     
 
 
@@ -30,12 +30,9 @@ library(ggplot2)
   
 
     # draw the histogram   
-
-      ggplot(moviescleanest, aes(year,budget)) + geom_point()
-
       ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
       
-      # Reason for failure check boxes
+    # Reason for failure check boxes
       output$value <- renderPrint({ input$checkFail })
       
 
@@ -47,13 +44,15 @@ library(ggplot2)
       ggplot(aes(year, budget)) + geom_point()
 
 
+      ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
+      
+      
+    # Reason for failure check boxes
+      output$value <- renderPrint({ input$checkFail })
+
+
 
   })
-  
-
-  
-
-  
   
   output$hoveredMovieInfo <- renderText({
     
