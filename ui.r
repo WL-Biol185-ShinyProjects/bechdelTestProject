@@ -44,12 +44,24 @@ shinyUI(fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       plotOutput("distPlot", hover = hoverOpts(id = "hovertitle")) , 
-        textOutput("hoveredMovieInfo")
+        textOutput("hoveredMovieInfo"),
+      
+      
+      #create group of checkboxes
+      checkboxGroupInput("checkFail", label = h3("Reason for Failure"), 
+                         choices = list("No Named Women Characters" = 1, "Women Characters Don't Talk" = 2, "Women Characters Only Talk About Men" = 3),
+                         selected = 1),
+      
+      
+      hr(),
+      fluidRow(column(3, verbatimTextOutput("value")))
+      
+    )
         
      )
    )
   )
-)
+
 
 
   
