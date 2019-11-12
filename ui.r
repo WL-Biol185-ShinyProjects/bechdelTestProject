@@ -12,51 +12,54 @@ library(ggplot2)
   # Sidebar with a slider input for number of bins 
     sidebarLayout(
       sidebarPanel(
-        sliderInput("budget",
-                  "Low Budget:",
-                  7000,
-                  212000000,
-                  value = c(11000000, 170000000),
-                  step = 2500),
-      
-        sliderInput("budget",
-                  "High Budget:",
-                  212000001,
-                  425000000,
-                  value = c(312000000, 412000000),
-                  step = 2500),
         
-        sliderInput("domgross",
-                    "Domestic Gross:",
-                    800,
-                    500000000,
-                    value = c(100000000, 200000000),
-                    step = 2500),
+        radioButtons("dist", "Reason for Failure:", 
+                     c("No Women Characters" = "reason$no women",
+                       "No Women Talking" = "reason$notalk",
+                       "Talk Only About Men" = "reason$men")),
         
-        sliderInput("intgross",
-                    "International Gross:",
-                    800,
-                    500000000,
-                    value = c(100000000, 200000000),
-                    step = 2500)
+        br()
       ),
       
       # Show a plot of the generated distribution
       mainPanel(
-        plotOutput("distPlot", hover = hoverOpts(id = "hovertitle")) , 
-        textOutput("hoveredMovieInfo"),
+  
         
+       
+      
+        tabsetPanel(type = "tabs", 
+                    tabPanel("Low Budget", plotOutput("distPlot"),
+                             sliderInput("budget",
+                                         "Low Budget:",
+                                         7000,
+                                         212000000,
+                                         value = c(11000000, 170000000),
+                                         step = 2500)),
+                    tabPanel("High Budget", plotOutput("distPlot"),
+                             sliderInput("budget",
+                                         "High Budget:",
+                                         212000001,
+                                         425000000,
+                                         value = c(312000000, 412000000),
+                                         step = 2500)),
+                    tabPanel("Domestic Gross", plotOutput("distPlot"),
+                             sliderInput("domgross",
+                                         "Domestic Gross:",
+                                         800,
+                                         500000000,
+                                         value = c(100000000, 200000000),
+                                         step = 2500)),
+                    tabPanel("International Gross", plotOutput("distPlot"),
+                             sliderInput("intgross",
+                                         "International Gross:",
+                                         800,
+                                         500000000,
+                                         value = c(100000000, 200000000),
+                                         step = 2500))
+    
+      
         
-        # create group of checkboxes
-        checkboxGroupInput("checkFail", label = h3("Reason for Failure"), 
-                           choices = list("No Named Women Characters" = 1, "Women Characters Don't Talk" = 2, "Women Characters Only Talk About Men" = 3),
-                           selected = 1),
-        
-        
-        hr(),
-        fluidRow(column(3, verbatimTextOutput("value")))
-        
-        
+      )
         
                          )
     )

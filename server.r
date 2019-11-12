@@ -12,16 +12,15 @@ library(ggplot2)
       titlePanel("Bechdel Test Data")
     
 
-    # draw the histogram   
-      ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
+    # draw the graph   
+     ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
       
-      
-    # Reason for failure check boxes
-      output$value <- renderPrint({ input$checkFail })
       
     
+  
+    })
 
-  })
+
   
 
  
