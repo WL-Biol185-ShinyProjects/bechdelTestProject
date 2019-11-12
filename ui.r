@@ -4,12 +4,20 @@ library(ggplot2)
 
 
 # Define UI for application that draws a histogram
-  shinyUI(fluidPage(
-
+    fluidPage( 
   
+ # Application title
+    titlePanel("Bechdel Test Data"),
   
-  # Application title
-  titlePanel("Bechdel Test Data"),
+  # navBar page
+   navbarPage(
+    theme = shinytheme("darkly"),
+    "", 
+    inverse = TRUE,
+    header = tags$style(type = 'text/css', '.navbar {background-color: #969090;
+                                                      font-family: Arial;
+                                                      font-size: 18px;
+                                                      color: #f9f9f9; }'),
   
   # Sidebar with a slider input for number of bins 
     sidebarLayout(

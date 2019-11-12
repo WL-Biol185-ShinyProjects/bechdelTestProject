@@ -15,7 +15,7 @@ library(ggplot2)
     titlePanel("Bechdel Test Data")
     
  # draw the histogram  
-   ggplot(moviescleaneast, aes(year, budget)) + geom_point()
+   ggplot(moviescleanest, aes(year, budget)) + geom_point()
     
 
       
