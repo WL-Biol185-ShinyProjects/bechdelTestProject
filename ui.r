@@ -25,7 +25,7 @@ library(ggplot2)
       dashboardBody(
         tabItems(
         tabItem(tabName = "homeTab", 
-                "This is the home page", 
+                "The Bechdel Test was created in response to this cartoon by Alison Bechdel in 1985. This test is a measure of the representation of women in movies based on three facets. The movie must contain at least two women, these two women must have a conversation with one another, and this conversation must be about something other than a man.", 
         img(src = "https://upload.wikimedia.org/wikipedia/en/b/bf/Dykes_to_Watch_Out_For_%28Bechdel_test_origin%29.jpg", height = 300, width = 500, align = "center")
         ),
      tabItem(tabName = "dataTab",
