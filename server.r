@@ -16,8 +16,8 @@ library(dplyr)
     # draw the graphs
     moviescleanest %>%
       filter(
-        budget >= min(budget[[input$'Low Budget']]) &
-          budget <= max(budget[[input$'Low Budget']])
+        budget >= min(budget[[input$budget]]) &
+          budget <= max(budget[[input$budget]])
       ) %>%
      ggplot(aes(year, budget)) + geom_point()
     
