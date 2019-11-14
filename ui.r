@@ -7,7 +7,6 @@ library(ggplot2)
     shinyUI(fluidPage( 
   
  # Application title
-    titlePanel("Bechdel Test Data"),
     
     ui <- dashboardPage(
       dashboardHeader(title = "Bechdel Test"),
@@ -15,7 +14,8 @@ library(ggplot2)
       dashboardSidebar(
         sidebarMenu(
          menuItem("Home", tabName = "homeTab"),
-         menuItem("Data", tabName = "dataTab")
+         menuItem("Data", tabName = "dataTab"),
+         menuItem("Sources", tabName = "sourcesTab")
         )
       ),
       dashboardBody(
@@ -24,7 +24,8 @@ library(ggplot2)
                 "The Bechdel Test was created in response to this cartoon by Alison Bechdel in 1985. This test is a measure of the representation of women in movies based on three facets. The movie must contain at least two women, these two women must have a conversation with one another, and this conversation must be about something other than a man.", 
         img(src = "https://upload.wikimedia.org/wikipedia/en/b/bf/Dykes_to_Watch_Out_For_%28Bechdel_test_origin%29.jpg", height = 300, width = 500, align = "center")
         ),
-     tabItem(tabName = "dataTab",
+        tabItem(tabName = "sourcesTab", "sources will go here"),
+        tabItem(tabName = "dataTab",
              sidebarLayout(
                sidebarPanel(
                  radioButtons("dist", "Reason for Failure:", 
