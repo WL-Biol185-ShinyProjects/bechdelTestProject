@@ -24,13 +24,10 @@ library(dplyr)
           budget <= input$lowBudget[2]
 
       ) %>%
-<<<<<<< HEAD
-     ggplot(aes(year, budget)) + geom_point()
-=======
-      ggplot(aes(year, budget)) + geom_point()
-    
->>>>>>> ef7b1f08a483405416ec5510e779c4481d25d003
 
+     ggplot(aes(year, budget)) + geom_point()
+
+ 
     
     })
 
@@ -64,13 +61,9 @@ library(dplyr)
     
     
     # draw the graphs
-<<<<<<< HEAD
+
     ggplot(moviescleanest, aes(year, moviescleanest$domgross)) + geom_point()
-=======
-  
->>>>>>> ef7b1f08a483405416ec5510e779c4481d25d003
-    
-    
+
     
   })
   
