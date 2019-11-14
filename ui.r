@@ -16,7 +16,8 @@ library(ggplot2)
         radioButtons("dist", "Reason for Failure:", 
                      c("No Women Characters" = "reason$no women",
                        "No Women Talking" = "reason$notalk",
-                       "Talk Only About Men" = "reason$men")),
+                       "Talk Only About Men" = "reason$men",
+                       "Passed Bechdel Test" = "reason$ok")),
         
         br()
       ),
