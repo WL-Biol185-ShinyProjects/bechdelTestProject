@@ -1,4 +1,5 @@
 library(shiny)
+library(shinydashboard)
 library(tidyverse)
 library(ggplot2)
 
@@ -8,6 +9,22 @@ library(ggplot2)
   
  # Application title
     titlePanel("Bechdel Test Data"),
+    
+
+    dashboardPage(
+      dashboardHeader("Bechdel Test"),
+      dashboardSidebar(
+        menuItem(tabName = "Home"),
+        menuItem(tabName = "Data")
+        
+      ),
+      dashboardBody(
+        tabItem(tabName = "Home"),
+        tabItem(tabName = "Data"
+                )
+      )
+      
+    ),
   
  
   # Sidebar with a slider input for number of bins 
