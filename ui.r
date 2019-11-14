@@ -53,7 +53,7 @@ library(ggplot2)
                                          value = c(100000000, 200000000),
                                          step = 2500)),
                     tabPanel("International Gross", plotOutput("intGrossPlot"),
-                             sliderInput("intgross",
+                             sliderInput("intGross",
                                          "International Gross:",
                                          800,
                                          500000000,

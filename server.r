@@ -76,7 +76,12 @@ library(dplyr)
     
     
     # draw the graphs
-    ggplot(moviescleanest, aes(year, moviescleanest$intgross)) + geom_point() + xlim(1970, 2013)
+    moviescleanest %>%
+      filter(
+        intgross >= input$intGross[1] &
+          intgross <= input$intGross[2]
+      ) %>%
+    ggplot(aes(year, intgross)) + geom_point() + xlim(1970, 2013)
     
     
     
