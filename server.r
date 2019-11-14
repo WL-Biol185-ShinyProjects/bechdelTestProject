@@ -19,7 +19,7 @@ library(dplyr)
     # draw the graphs
     moviescleanest %>%
       filter(
-
+        
           budget >= input$lowBudget[1] &
           budget <= input$lowBudget[2]
 
