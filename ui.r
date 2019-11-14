@@ -31,6 +31,7 @@ library(ggplot2)
        
       
         tabsetPanel(type = "tabs", 
+                    tabPanel("Home", img(src = , height =, width = , align = center)),
                     tabPanel("Low Budget", plotOutput("lowBudgetPlot"),
                              sliderInput("lowBudget",
                                          "Low Budget:",
