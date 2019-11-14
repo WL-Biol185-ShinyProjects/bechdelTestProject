@@ -3,6 +3,8 @@ library(shinydashboard)
 library(tidyverse)
 library(ggplot2)
 
+source("content-tab.r")
+
 
 # Define UI for application that draws a histogram
     shinyUI(fluidPage( 
@@ -11,20 +13,28 @@ library(ggplot2)
     titlePanel("Bechdel Test Data"),
     
 
-    dashboardPage(
-      dashboardHeader("Bechdel Test"),
+    ui <- dashboardPage(
+      dashboardHeader(title = "Bechdel Test"),
+      
       dashboardSidebar(
-        menuItem(tabName = "Home"),
-        menuItem(tabName = "Data")
+        sidebarMenu(
+         menuItem("Home", tabName = "homeTab"),
+         menuItem("Data", tabName = "dataTab")
+        )
         
       ),
       dashboardBody(
-        tabItem(tabName = "Home"),
-        tabItem(tabName = "Data"
+        tabItems(
+        tabItem(tabName = "homeTab", 
+                "This is the home page", 
+        img(src = "https://upload.wikimedia.org/wikipedia/en/b/bf/Dykes_to_Watch_Out_For_%28Bechdel_test_origin%29.jpg", height = 300, width = 500, align = "center")
+        ),
+     tabItem(tabName = "dataTab",
                 )
       )
       
-    ),
+    )
+    )
   
  
   # Sidebar with a slider input for number of bins 
