@@ -4,21 +4,12 @@ library(ggplot2)
 
 
 # Define UI for application that draws a histogram
-    fluidPage( 
+    shinyUI(fluidPage( 
   
  # Application title
     titlePanel("Bechdel Test Data"),
   
-  # navBar page
-   navbarPage(
-    theme = shinytheme("darkly"),
-    "", 
-    inverse = TRUE,
-    header = tags$style(type = 'text/css', '.navbar {background-color: #969090;
-                                                      font-family: Arial;
-                                                      font-size: 18px;
-                                                      color: #f9f9f9; }'),
-  
+ 
   # Sidebar with a slider input for number of bins 
     sidebarLayout(
       sidebarPanel(
@@ -33,24 +24,8 @@ library(ggplot2)
       
       # Show a plot of the generated distribution
       mainPanel(
-<<<<<<< HEAD
-        plotOutput("distPlot", hover = hoverOpts(id = "hovertitle")) , 
-          textOutput("hoveredMovieInfo"),
       
-    
-        
-        
-        # create group of checkboxes
-        checkboxGroupInput("checkFail", label = h3("Reason for Failure"), 
-                           choices = list("No Named Women Characters" = 1, "Women Characters Don't Talk" = 2, "Women Characters Only Talk About Men" = 3),
-                           selected = 1),
-        
-        
-        hr(),
-        fluidRow(column(3, verbatimTextOutput("value")))
-=======
-  
->>>>>>> fc7b41be8d9d2a8de572e50c42f7f1744e181dd8
+
         
        
       

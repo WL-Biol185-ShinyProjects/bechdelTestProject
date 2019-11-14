@@ -5,31 +5,16 @@ library(dplyr)
 
 
   # Define server logic required to draw a histogram
-  function(input, output, session) 
+  function(input, output, session) {
   
 
-  output$lowBudgetPlot <- renderPlot
+  output$lowBudgetPlot <- renderPlot({
 
-
-   function(input, output) {
-     
-    output$distPlot <- renderPlot({
     
 
  # Application title
     titlePanel("Bechdel Test Data")
     
- # draw the histogram  
-   ggplot(moviescleanest, aes(year, budget)) + geom_point()
-    
-      
- # Reason for failure check boxes
-    output$value <- renderPrint({ input$budget }) + geom_point()
-
-    # draw the graph   
-     ggplot(moviescleanest, aes(year, input$budget)) + geom_point()
-      
-      
 
     # draw the graphs
     moviescleanest %>%
@@ -55,8 +40,6 @@ library(dplyr)
   
 
 
-  }
-
 
 
   output$domGrossPlot <- renderPlot({
@@ -66,7 +49,7 @@ library(dplyr)
     
     
     # draw the graphs
-    ggplot(moviescleanest, aes(year,  moviescleanest$domgross)) + geom_point()
+    ggplot(moviescleanest, aes(year, moviescleanest$domgross)) + geom_point()
     
     
     
@@ -79,13 +62,13 @@ library(dplyr)
     
     
     # draw the graphs
-    ggplot(moviescleanest, aes(year,  moviescleanest$intgross)) + geom_point() + xlim(1970, 2013)
+    ggplot(moviescleanest, aes(year, moviescleanest$intgross)) + geom_point() + xlim(1970, 2013)
     
     
     
   })
  
-  
+ } 
   
   
 
