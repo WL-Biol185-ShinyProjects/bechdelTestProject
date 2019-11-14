@@ -7,7 +7,6 @@ library(ggplot2)
     shinyUI(fluidPage( 
   
  # Application title
-    titlePanel("Bechdel Test Data"),
     
     ui <- dashboardPage(
       dashboardHeader(title = "Bechdel Test"),
