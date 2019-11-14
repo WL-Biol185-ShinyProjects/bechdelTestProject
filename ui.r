@@ -46,7 +46,7 @@ library(ggplot2)
                                          value = c(115000000, 242000000),
                                          step = 2500)),
                     tabPanel("Domestic Gross", plotOutput("domGrossPlot"),
-                             sliderInput("domgross",
+                             sliderInput("domGross",
                                          "Domestic Gross:",
                                          800,
                                          500000000,

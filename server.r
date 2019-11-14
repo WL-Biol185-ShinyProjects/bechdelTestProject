@@ -25,7 +25,7 @@ library(dplyr)
 
       ) %>%
 
-     ggplot(aes(year, budget)) + geom_point()
+     ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
 
  
     
@@ -52,8 +52,6 @@ library(dplyr)
   
 
 
-
-
   output$domGrossPlot <- renderPlot({
     
     # Application title
@@ -61,8 +59,12 @@ library(dplyr)
     
     
     # draw the graphs
-
-    ggplot(moviescleanest, aes(year, moviescleanest$domgross)) + geom_point()
+    moviescleanest %>%
+      filter(
+        domgross >= input$domGross[1] &
+          domgross <= input$domGross[2]
+      ) %>%
+    ggplot(aes(year, domgross)) + geom_point() + xlim(1970, 2013)
 
     
   })
