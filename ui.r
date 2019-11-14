@@ -37,7 +37,7 @@ library(ggplot2)
                                          value = c(11000000, 170000000),
                                          step = 2500)),
                     tabPanel("High Budget", plotOutput("highBudgetPlot"),
-                             sliderInput("budget",
+                             sliderInput("highBudget",
                                          "High Budget:",
                                          212000001,
                                          425000000,
