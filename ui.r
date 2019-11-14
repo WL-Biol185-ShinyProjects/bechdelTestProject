@@ -31,8 +31,12 @@ library(ggplot2)
        
       
         tabsetPanel(type = "tabs", 
+<<<<<<< HEAD
                     tabPanel("Home", img(src = "https://upload.wikimedia.org/wikipedia/en/b/bf/Dykes_to_Watch_Out_For_%28Bechdel_test_origin%29.jpg", height = 450, width = 600, align = "center", "Reason for Failure" = NULL)),
                     
+=======
+                    tabPanel("Home", img(src = "https://upload.wikimedia.org/wikipedia/en/b/bf/Dykes_to_Watch_Out_For_%28Bechdel_test_origin%29.jpg", height = 300, width = 500, align = "center")),
+>>>>>>> 4711cc4b72a65c7ce08021586cc00cd6f48ecd0b
                     tabPanel("Low Budget", plotOutput("lowBudgetPlot"),
                              sliderInput("lowBudget",
                                          "Low Budget:",
