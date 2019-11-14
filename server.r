@@ -42,7 +42,7 @@ library(dplyr)
     moviescleanest %>%
       filter(
         budget >= input$highBudget[1] &
-          budget <= input$highBudget[2]
+          budget <= input$highBudget[2] 
       ) %>%
       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     
