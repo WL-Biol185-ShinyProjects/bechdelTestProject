@@ -20,8 +20,7 @@ library(dplyr)
     # draw the graphs
     moviescleanest %>%
       filter(
-
-        budget >= min(budgetBins[[input$budgetGroupBy]]) &
+          budget >= min(budgetBins[[input$budgetGroupBy]]) &
           budget <= max(budgetBins[[input$budgetGroupBy]])
 
       ) %>%
