@@ -3,15 +3,12 @@ library(shinydashboard)
 library(tidyverse)
 library(ggplot2)
 
-
-
 # Define UI for application that draws a histogram
     shinyUI(fluidPage( 
   
  # Application title
     titlePanel("Bechdel Test Data"),
     
-
     ui <- dashboardPage(
       dashboardHeader(title = "Bechdel Test"),
       
@@ -20,7 +17,6 @@ library(ggplot2)
          menuItem("Home", tabName = "homeTab"),
          menuItem("Data", tabName = "dataTab")
         )
-        
       ),
       dashboardBody(
         tabItems(
@@ -31,22 +27,16 @@ library(ggplot2)
      tabItem(tabName = "dataTab",
              sidebarLayout(
                sidebarPanel(
-                 
                  radioButtons("dist", "Reason for Failure:", 
                               c("No Women Characters" = "reason$no women",
                                 "No Women Talking" = "reason$notalk",
                                 "Talk Only About Men" = "reason$men",
                                 "Passed Bechdel Test" = "reason$ok")),
-                 
                  br()
                ),
                
                # Show a plot of the generated distribution
                mainPanel(
-                 
-                 
-                 
-                 
                  
                  tabsetPanel(type = "tabs", 
                              
@@ -79,24 +69,12 @@ library(ggplot2)
                                                   value = c(100000000, 200000000),
                                                   step = 2500))
                              
-             
                 )
-      )
-      
-    )
-    )
-  
- 
-
-        
-      )
-        
-  )
-  )
-    
-    
-      
-  )
-
-  )
-
+               )
+              )
+             )
+            )
+           )
+          )
+         )
+        )
