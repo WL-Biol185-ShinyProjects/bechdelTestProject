@@ -32,6 +32,7 @@ library(ggplot2)
                                 "No Women Talking" = "reason$notalk",
                                 "Talk Only About Men" = "reason$men",
                                 "Passed Bechdel Test" = "reason$ok")),
+        
                  br()
                ),
                
