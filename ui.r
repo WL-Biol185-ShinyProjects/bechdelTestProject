@@ -3,7 +3,6 @@ library(shinydashboard)
 library(tidyverse)
 library(ggplot2)
 
-source("content-tab.r")
 
 
 # Define UI for application that draws a histogram
