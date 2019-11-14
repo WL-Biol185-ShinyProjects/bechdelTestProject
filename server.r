@@ -12,13 +12,12 @@ library(dplyr)
     # Application title
       titlePanel("Bechdel Test Data")
     
-    budgetBins <- list('Low Budget' =  7000:212000000, 'High Budget' =  212000001:425000000)
 
     # draw the graphs
     moviescleanest %>%
       filter(
-        budget >= min(budgetBins[[input$budgetGroupBy]]) &
-          budget <= max(budgetBins[[input$budgetGroupBy]])
+        budget >= input$lowBudget[1] &
+          budget <= input$lowBudget[2]
       ) %>%
      ggplot(aes(year, budget)) + geom_point()
     
