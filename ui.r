@@ -31,7 +31,7 @@ library(ggplot2)
       
         tabsetPanel(type = "tabs", 
                     tabPanel("Low Budget", plotOutput("lowBudgetPlot"),
-                             sliderInput("budget",
+                             sliderInput("budgetGroupBy",
                                          "Low Budget:",
                                          7000,
                                          212000000,
