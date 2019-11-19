@@ -71,5 +71,7 @@ library(dplyr)
     ggplot(aes(year, intgross)) + geom_point() + xlim(1970, 2013)
     
   })
- } 
+  } 
+
+ 
   
