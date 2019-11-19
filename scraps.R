@@ -52,3 +52,11 @@ d <- reactive({
          main = paste("r", dist, "(", n,")", sep = "")
     )        
   })
+  
+  
+  filter(
+    budget >= input$highBudget[1] &
+      budget <= input$highBudget[2] &
+      reason == input$dist &
+      decade == input$dec
+  ) %>%

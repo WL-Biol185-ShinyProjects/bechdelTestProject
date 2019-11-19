@@ -28,13 +28,10 @@ library(dplyr)
     titlePanel("Bechdel Test Data")
     
     # draw the graphs
-    moviescleanest %>%
-      filter(
-        budget >= input$highBudget[1] &
-        budget <= input$highBudget[2] &
-        reason == input$dist &
-        decade == input$dec
-            ) %>%
+   initialFilter <- filter(moviescleanest, 
+                           #where we're gonna add stuff)
+     moviescleanest %>%
+
       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     
   })
