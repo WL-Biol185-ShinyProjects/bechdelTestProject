@@ -42,3 +42,7 @@ colnames(moviescleanest)[colnames(moviescleanest) == "binary"] <- "code"
 
 #rename clean_test
 colnames(moviescleanest)[colnames(moviescleanest) == "clean_test"] <- "reason"
+
+#rename clean_test
+colnames(moviescleanest)[colnames(moviescleanest) == "decade code"] <- "decade"
+
