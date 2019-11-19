@@ -30,8 +30,8 @@ library(dplyr)
     moviescleanest %>%
       filter(
         budget >= input$highBudget[1] &
-        budget <= input$highBudget[2] 
-      ) %>%
+        budget <= input$highBudget[2] &
+          reason == input$dist) %>%
       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     
   })
@@ -45,8 +45,8 @@ library(dplyr)
     moviescleanest %>%
       filter(
         domgross >= input$domGross[1] &
-          domgross <= input$domGross[2]
-            ) %>%
+          domgross <= input$domGross[2] &
+            reason == input$dist ) %>%
     ggplot(aes(year, domgross)) + geom_point() + xlim(1970, 2013)
     
   })
@@ -60,8 +60,8 @@ library(dplyr)
     moviescleanest %>%
       filter(
         intgross >= input$intGross[1] &
-        intgross <= input$intGross[2]
-           ) %>%
+        intgross <= input$intGross[2] &
+          reason == input$dist  ) %>%
     ggplot(aes(year, intgross)) + geom_point() + xlim(1970, 2013)
     
   })
