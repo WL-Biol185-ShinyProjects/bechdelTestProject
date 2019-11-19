@@ -35,10 +35,10 @@ library(htmltools)
              sidebarLayout(
                sidebarPanel(
                  radioButtons("dist", "Reason for Failure:", 
-                              c("No Women Characters" = "reason$no women",
-                                "No Women Talking" = "reason$notalk",
-                                "Talk Only About Men" = "reason$men",
-                                "Passed Bechdel Test" = "reason$ok")),
+                              c("No Named Women Characters" = "nowomen",
+                                "No Women Talking" = "notalk",
+                                "Talk Only About Men" = "men",
+                                "Passed Bechdel Test" = "ok")),
                  br()
                ),
                

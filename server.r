@@ -10,19 +10,13 @@ library(dplyr)
  # Application title
     titlePanel("Bechdel Test Data")
     
-    #Radio Buttons
-    dist <- switch(input$dist,
-                   "No Women Characters" = "reason$no women",
-                   "No Women Talking" = "reason$notalk",
-                   "Talk Only About Men" = "reason$men",
-                   "Passed Bechdel Test" = "reason$ok", 
-                   "reason$no women")
-    
+
     # draw the graphs
     moviescleanest %>%
       filter(
           budget >= input$lowBudget[1] &
-          budget <= input$lowBudget[2]
+          budget <= input$lowBudget[2] &
+          reason == input$dist
             ) %>%
           ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     })
