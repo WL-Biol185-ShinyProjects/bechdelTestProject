@@ -3,12 +3,20 @@ library(ggplot2)
 library(dplyr)
 
   # Define server logic required to draw a histogram
-  function(input, output, session) {
+  function(input, output) {
   
   output$lowBudgetPlot <- renderPlot({
 
  # Application title
     titlePanel("Bechdel Test Data")
+    
+    #Radio Buttons
+    dist <- switch(input$dist,
+                   "No Women Characters" = "reason$no women",
+                   "No Women Talking" = "reason$notalk",
+                   "Talk Only About Men" = "reason$men",
+                   "Passed Bechdel Test" = "reason$ok", 
+                   "reason$no women")
     
     # draw the graphs
     moviescleanest %>%
