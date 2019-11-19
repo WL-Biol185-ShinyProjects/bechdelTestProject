@@ -52,3 +52,11 @@ d <- reactive({
          main = paste("r", dist, "(", n,")", sep = "")
     )        
   })
+  
+  moviescleanest %>%
+    filter(
+      budget >= input$lowBudget[1] &
+        budget <= input$lowBudget[2] &
+        reason == input$dist &
+        decade == input$dec
+    ) 

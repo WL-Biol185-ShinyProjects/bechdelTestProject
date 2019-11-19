@@ -12,13 +12,8 @@ library(dplyr)
     
 
     # draw the graphs
-    moviescleanest %>%
-      filter(
-          budget >= input$lowBudget[1] &
-          budget <= input$lowBudget[2] &
-          reason == input$dist &
-          decade == input$dec
-            ) %>%
+    
+          %>%
           ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     })
 
