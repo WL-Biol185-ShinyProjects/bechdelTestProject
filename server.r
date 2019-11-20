@@ -12,8 +12,14 @@ library(dplyr)
     
 
     # draw the graphs
-    
-          %>%
+    initialFilter <- filter(moviescleanest, domgross >= input$domGross[1] &
+                                            domgross <= input$domGross[2])
+    finalFilter   <- if("All"   == input$dist) {
+                       initialFilter
+                       } else {
+      filter(initialFilter, reason   == input$dist, decade   == input$dec)
+    }
+    finalFilter %>%
           ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     })
 
@@ -23,10 +29,14 @@ library(dplyr)
     titlePanel("Bechdel Test Data")
     
     # draw the graphs
-   initialFilter <- filter(moviescleanest, 
-                           #where we're gonna add stuff)
-     moviescleanest %>%
-
+   initialFilter <- filter(moviescleanest, domgross >= input$domGross[1] &
+                                           domgross <= input$domGross[2])
+   finalFilter   <- if("All"   == input$dist) {
+                       initialFilter
+                       } else {
+                         filter(initialFilter, reason  == input$dist, decade == input$dec)
+                      }
+     finalFilter %>%
       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     
   })
@@ -37,13 +47,14 @@ library(dplyr)
     titlePanel("Bechdel Test Data")
     
     # draw the graphs
-    moviescleanest %>%
-      filter(
-        domgross >= input$domGross[1] &
-        domgross <= input$domGross[2] &
-        reason   == input$dist &
-        decade   == input$dec
-            ) %>%
+    initialFilter <- filter(moviescleanest, domgross >= input$domGross[1] &
+                              domgross <= input$domGross[2])
+    finalFilter   <- if("All"   == input$dist) {
+      initialFilter
+    } else {
+      filter(initialFilter, reason  == input$dist, decade == input$dec)
+    }
+    finalFilter %>%
     ggplot(aes(year, domgross)) + geom_point() + xlim(1970, 2013)
     
   })
@@ -54,13 +65,14 @@ library(dplyr)
     titlePanel("Bechdel Test Data")
     
     # draw the graphs
-    moviescleanest %>%
-      filter(
-        intgross >= input$intGross[1] &
-        intgross <= input$intGross[2] &
-        reason   == input$dist & 
-        decade   == input$dec
-            ) %>%
+    initialFilter <- filter(moviescleanest, domgross >= input$domGross[1] &
+                              domgross <= input$domGross[2])
+    finalFilter   <- if("All"   == input$dist) {
+      initialFilter
+    } else {
+      filter(initialFilter, reason  == input$dist, decade == input$dec)
+    }
+    finalFilter %>%
     ggplot(aes(year, intgross)) + geom_point() + xlim(1970, 2013)
     
   })
