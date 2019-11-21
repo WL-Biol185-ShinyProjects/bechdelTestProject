@@ -12,6 +12,8 @@ library(htmltools)
     ui <- dashboardPage(
       dashboardHeader(title = "Bechdel Test"),
       
+      # Making tabs on sidebar
+      
       dashboardSidebar(
         sidebarMenu(
          menuItem("Home", tabName = "homeTab"),
@@ -21,14 +23,33 @@ library(htmltools)
       ),
       dashboardBody(
         tabItems(
-        tabItem(tabName = "homeTab", 
+        tabItem((tabName = "homeTab"), 
        
-              strong("What is the Bechdel Test?"),
+              h3(strong("What is the Bechdel Test?")),
        
          br(),
+         
+                h4(p("The Bechdel Test was created in response to this cartoon by Alison Bechdel in 1985. This test is a measure of the representation of women in movies based on three facets.")),
+                
+                br(),
+                
+                h4(p(strong("The movie must contain:"))), 
+                
+                br(),
+                
+                h4(p("1) at least two women")),
+                
+                br(),
+                
+                h4(p("2) these two women must have a conversation with one another")),
+                
+                br(),
+                
+                h4(p("3) this conversation must be about something other than a man")), 
          br(),
-                p("The Bechdel Test was created in response to this cartoon by Alison Bechdel in 1985. This test is a measure of the representation of women in movies based on three facets. The movie must contain at least two women, these two women must have a conversation with one another, and this conversation must be about something other than a man."), 
-        img(src = "https://upload.wikimedia.org/wikipedia/en/b/bf/Dykes_to_Watch_Out_For_%28Bechdel_test_origin%29.jpg", height = 600, width = 1000, align = "center"),
+         br(),
+         
+         img(src = "https://upload.wikimedia.org/wikipedia/en/b/bf/Dykes_to_Watch_Out_For_%28Bechdel_test_origin%29.jpg", height = 600, width = 1000, align = "center"),
         
         br(),
         br(),
@@ -39,22 +60,22 @@ library(htmltools)
         ),
         
         tabItem(tabName = "sourcesTab", 
-                strong("Sources"),
+                h3(strong("Sources")),
                 
                 br(),
                 br(),
                 
-                a("About Bechdel Test and Original Comic Strip", href = "wwww.npr.org/templates/story/story.php?storyId=94202522"),
+                a(h4("About Bechdel Test and Original Comic Strip"), href = "wwww.npr.org/templates/story/story.php?storyId=94202522"),
                 
                 br(),
                 br(),
                 
-                a("Article Where Data is From", href = "https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/"),
+                a(h4("Article Where Data is From"), href = "https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/"),
                 
                 br(),
                 br(),
                 
-                a("Github for Data", href = "https://github.com/fivethirtyeight/data/tree/master/bechdel")
+                a(h4("Github for Data"), href = "https://github.com/fivethirtyeight/data/tree/master/bechdel")
                 
                 
                 ),
