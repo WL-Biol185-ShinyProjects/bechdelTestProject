@@ -60,10 +60,19 @@ moviescleanest <- read.csv("moviescleanest.csv")
         h4(p("All of the Data Points:")),
         
         br(),
+        br(),
         
-        plotOutput("allPlot")
+        textOutput('hoverPointInfoAllPlot'),
+        plotOutput("allPlot", hover = hoverOpts(id = "allPlotHover")),
+        
+        
+        br()
         
         ),
+        
+    
+        
+        
         
         tabItem(tabName = "sourcesTab", 
                 h3(strong("Sources")),
