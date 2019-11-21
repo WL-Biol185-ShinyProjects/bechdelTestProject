@@ -46,7 +46,7 @@ library(dplyr)
     # draw the graphs
     moviescleanest %>%
       filter(
-        budget >= input$domGrosst[1] &
+        budget >= input$domGross[1] &
           budget <= input$domGross[2] &
           reason == input$dist &
           decade == input$dec
@@ -63,7 +63,7 @@ library(dplyr)
     # draw the graphs
     moviescleanest %>%
       filter(
-        budget >= input$intGrosst[1] &
+        budget >= input$intGross[1] &
           budget <= input$intGross[2] &
           reason == input$dist &
           decade == input$dec
