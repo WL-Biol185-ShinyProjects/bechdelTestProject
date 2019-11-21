@@ -39,20 +39,9 @@ library(htmltools)
         ),
         
         tabItem(tabName = "sourcesTab", 
-                strong("Sources"),
+                strong("Sources")
                 
-                br(),
-                br(),
-                
-                urlEncodePath(wwww.npr.org/templates/story/story.php?storyId=94202522),
-                
-                br(),
-                
-                urlEncodePath(https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/),
-                
-                br(),
-                
-                urlEncodePath(https://github.com/fivethirtyeight/data/tree/master/bechdel)
+    
                 
                 ),
                 
