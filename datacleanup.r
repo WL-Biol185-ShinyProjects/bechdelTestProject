@@ -5,7 +5,7 @@ library(ggplot2)
 library(shiny)
 
 # download data
-movies <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/movies.csv")
+movies <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/movies.csv", na = "#N/A") 
 
 # data clean-up
 moviesclean <- movies
@@ -46,3 +46,4 @@ colnames(moviescleanest)[colnames(moviescleanest) == "clean_test"] <- "reason"
 #rename clean_test
 colnames(moviescleanest)[colnames(moviescleanest) == "decade code"] <- "decade"
 
+write.csv(moviescleanest, "moviescleanest.csv")

@@ -4,6 +4,8 @@ library(tidyverse)
 library(ggplot2)
 library(htmltools)
 
+moviescleanest <- read.csv("moviescleanest.csv")
+
 # Define UI for application that draws a histogram
     shinyUI(fluidPage( 
   
@@ -136,10 +138,10 @@ library(htmltools)
                                                   step = 2500)),
                              tabPanel("Domestic Gross",
                                       
-                                      plotOutput("domGrossBudgetPlot", hover = hoverOpts(id = "domGrossBudgetHover")),
-                                      textOutput('hoverPointInfoDomGross'),
+                                      plotOutput("domgrossPlot", hover = hoverOpts(id = "domgrossHover")),
+                                      textOutput('hoverPointInfoDomgross'),
                                       
-                                      sliderInput("domGross",
+                                      sliderInput("domgross",
                                                   "Domestic Gross:",
                                                   800,
                                                   500000000,

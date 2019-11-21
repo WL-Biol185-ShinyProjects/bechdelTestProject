@@ -2,6 +2,8 @@ library(shiny)
 library(ggplot2)
 library(dplyr)
 
+moviescleanest <- read.csv("moviescleanest.csv")
+
   # Define server logic required to draw a histogram
   function(input, output) {
   
@@ -53,16 +55,15 @@ library(dplyr)
     
   })
   
-  output$domGrossPlot <- renderPlot({
+  output$domgrossPlot <- renderPlot({
     
-    # Application title
-    titlePanel("Bechdel Test Data")
+
     
     # draw the graphs
     moviescleanest %>%
       filter(
-        budget >= input$domGross[1] &
-          budget <= input$domGross[2] &
+        budget >= input$domgross[1] &
+          budget <= input$domgross[2] &
           reason == input$dist &
           decade == input$dec
       ) %>%
@@ -70,10 +71,12 @@ library(dplyr)
     
   })
   
-  output$hoverPointInfoDomGross <- renderText({
+  output$hoverPointInfoDomgross <- renderText({
+
     
-    domGrossBudgetHover <- nearPoints(moviescleanest, input$domGrossBudgetHover)
-    domGrossBudgetHover$title
+    domgrossHover <- nearPoints(moviescleanest, input$domgrossHover)
+
+    as.character (domgrossHover$title)
     
   })
   
