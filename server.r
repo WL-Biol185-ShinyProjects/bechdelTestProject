@@ -46,7 +46,12 @@ library(dplyr)
     
   })
   
-
+  output$hoverPointInfoHigh <- renderText({
+    
+    highBudgetHover <- nearPoints(moviescleanest, input$highBudgetHover)
+    highBudgetHover$title
+    
+  })
   
   output$domGrossPlot <- renderPlot({
     
@@ -62,6 +67,13 @@ library(dplyr)
           decade == input$dec
       ) %>%
     ggplot(aes(year, domgross)) + geom_point() + xlim(1970, 2013)
+    
+  })
+  
+  output$hoverPointInfoDomGross <- renderText({
+    
+    domGrossBudgetHover <- nearPoints(moviescleanest, input$domGrossBudgetHover)
+    domGrossBudgetHover$title
     
   })
   
