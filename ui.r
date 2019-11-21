@@ -82,7 +82,7 @@ shinyUI(fluidPage(
         
         
         
-        
+
         tabItem(tabName = "sourcesTab", 
                 
                 h3(strong("Sources")),
@@ -111,30 +111,14 @@ shinyUI(fluidPage(
              sidebarLayout(
                sidebarPanel(
                  radioButtons("dist", "Reason for Failure:", 
-                              c("No Women Characters" = "reason$no women",
-                                "No Women Talking" = "reason$notalk",
-                                "Talk Only About Men" = "reason$men",
-                                "Passed Bechdel Test" = "reason$ok")),
-        
-                 br(),
                               c("No Named Women Characters" = "nowomen",
                                 "No Women Talking"          = "notalk",
                                 "Talk Only About Men"       = "men",
-                                "Passed Bechdel Test"       = "ok",
-
-                
-                sidebarLayout(
-                  
-                  sidebarPanel(
-                    
-                    radioButtons("dist", "Reason for Failure:", 
-                                 c("No Named Women Characters" = "nowomen",
-                                   "No Women Talking"          = "notalk",
-                                   "Talk Only About Men"       = "men",
-                                   "Passed Bechdel Test"       = "ok"
-                                 )),
-                    
-                    br(),
+                                "Passed Bechdel Test"       = "ok"
+                              )),
+        
+                 br(),
+                             
                     
                     radioButtons("dec", "Decade:", 
                                  c("1970's" = "1970s",
@@ -146,7 +130,6 @@ shinyUI(fluidPage(
                   
                   # Show a plot of the generated distribution
                   mainPanel(
-                    
                     tabsetPanel(type = "tabs", 
                                 
                                 tabPanel("Low Budget",
@@ -192,24 +175,13 @@ shinyUI(fluidPage(
                     )
                   )
                 )
-<<<<<<< HEAD
                )
               )
              )
             )
            )
           )
-         )
-        )
-      )
-    
-
-=======
-              )
-            )
-          )
-        )
-      )
-    )
+        
+       
   
->>>>>>> 4e23c0ef97c63b26f15d31f7c7176c62e69936df
+
