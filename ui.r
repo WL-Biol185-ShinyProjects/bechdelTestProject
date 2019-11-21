@@ -147,7 +147,11 @@ moviescleanest <- read.csv("moviescleanest.csv")
                                                   500000000,
                                                   value = c(100000000, 200000000),
                                                   step = 2500)),
-                             tabPanel("International Gross", plotOutput("intGrossPlot"),
+                             tabPanel("International Gross", 
+                                      
+                                      plotOutput("intGrossPlot", hover = hoverOpts(id = "intGrossHover")),
+                                      textOutput('hoverPointInfoIntGross'),
+                                      
                                       sliderInput("intGross",
                                                   "International Gross:",
                                                   800,

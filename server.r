@@ -97,6 +97,15 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
   })
   
+  output$hoverPointInfoIntGross <- renderText({
+    
+    
+    intGrossHover <- nearPoints(moviescleanest, input$intGrossHover)
+    
+    as.character (intGrossHover$title)
+    
+  })
+  
   output$allPlot <- renderPlot({
   
     moviescleanest %>%
