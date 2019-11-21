@@ -27,7 +27,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   output$hoverPointInfoLow <- renderText({
     
     lowBudgetHover <- nearPoints(moviescleanest, input$lowBudgetHover)
-    lowBudgetHover$title
+    as.character (lowBudgetHover$title)
     
   })
   
@@ -51,7 +51,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   output$hoverPointInfoHigh <- renderText({
     
     highBudgetHover <- nearPoints(moviescleanest, input$highBudgetHover)
-    highBudgetHover$title
+    as.character (highBudgetHover$title)
     
   })
   
