@@ -2,6 +2,8 @@ library(shiny)
 library(ggplot2)
 library(dplyr)
 
+moviescleanest <- read.csv("moviescleanest.csv")
+
   # Define server logic required to draw a histogram
   function(input, output) {
   
@@ -22,6 +24,13 @@ library(dplyr)
        ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     })
 
+  output$hoverPointInfoLow <- renderText({
+    
+    lowBudgetHover <- nearPoints(moviescleanest, input$lowBudgetHover)
+    as.character (lowBudgetHover$title)
+    
+  })
+  
   output$highBudgetPlot <- renderPlot({
     
     # Application title
@@ -39,20 +48,35 @@ library(dplyr)
     
   })
   
-  output$domGrossPlot <- renderPlot({
+  output$hoverPointInfoHigh <- renderText({
     
-    # Application title
-    titlePanel("Bechdel Test Data")
+    highBudgetHover <- nearPoints(moviescleanest, input$highBudgetHover)
+    as.character (highBudgetHover$title)
+    
+  })
+  
+  output$domgrossPlot <- renderPlot({
+    
+
     
     # draw the graphs
     moviescleanest %>%
       filter(
-        budget >= input$domGross[1] &
-          budget <= input$domGross[2] &
+        budget >= input$domgross[1] &
+          budget <= input$domgross[2] &
           reason == input$dist &
           decade == input$dec
       ) %>%
     ggplot(aes(year, domgross)) + geom_point() + xlim(1970, 2013)
+    
+  })
+  
+  output$hoverPointInfoDomgross <- renderText({
+
+    
+    domgrossHover <- nearPoints(moviescleanest, input$domgrossHover)
+
+    as.character (domgrossHover$title)
     
   })
   
@@ -73,13 +97,31 @@ library(dplyr)
     
   })
   
+  output$hoverPointInfoIntGross <- renderText({
+    
+    
+    intGrossHover <- nearPoints(moviescleanest, input$intGrossHover)
+    
+    as.character (intGrossHover$title)
+    
+  })
+  
   output$allPlot <- renderPlot({
   
     moviescleanest %>%
-      ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
+      ggplot(aes(year, budget, color = reason)) + geom_point() + xlim(1970, 2013)
     
   })
     
+  output$hoverPointInfoAllPlot <- renderText({
+    
+    
+    allPlotHover <- nearPoints(moviescleanest, input$allPlotHover)
+    
+    as.character (allPlotHover$title)
+    
+  })
+  
   } 
 
  
