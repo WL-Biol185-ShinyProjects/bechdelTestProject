@@ -109,7 +109,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   output$allPlot <- renderPlot({
   
     moviescleanest %>%
-      ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
+      ggplot(aes(year, budget, color = reason)) + geom_point() + xlim(1970, 2013)
     
   })
     
