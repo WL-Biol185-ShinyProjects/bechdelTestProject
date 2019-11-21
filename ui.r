@@ -12,7 +12,6 @@ moviescleanest <- read.csv("moviescleanest.csv")
 # Define UI for application that draws a histogram
 shinyUI(fluidPage( 
   
-<<<<<<< HEAD
 # Application title
     ui <- dashboardPage(
       dashboardHeader(title = "Bechdel Test"),
@@ -25,28 +24,7 @@ shinyUI(fluidPage(
          menuItem("Sources", tabName = "sourcesTab")
         )
       ),
-
-      dashboardBody(
-        tabItems(
-        tabItem((tabName = "homeTab"), 
-       
-              h3(strong("What is the Bechdel Test?")),
-       
-         br(),
-         
-=======
-  # Application title
-  ui <- dashboardPage(
-    dashboardHeader(title = "Bechdel Test"),
-    
-    # Making tabs on sidebar
-    dashboardSidebar(
-      sidebarMenu(
-        menuItem("Home",    tabName = "homeTab"),
-        menuItem("Data",    tabName = "dataTab"),
-        menuItem("Sources", tabName = "sourcesTab")
-      )
-    ),
+  
     
     dashboardBody(
       tabItems(
@@ -56,7 +34,6 @@ shinyUI(fluidPage(
                 
                 br(),
                 
->>>>>>> 24a33c87a0e176f9adaebf563dce4a6eb97e5932
                 h4(p("The Bechdel Test was created in response to this cartoon by Alison Bechdel in 1985. This test is a measure of the representation of women in movies based on three facets.")),
                 
                 br(),
@@ -201,9 +178,10 @@ shinyUI(fluidPage(
                     )
                   )
                 )
+              )
+            )
+          )
         )
       )
     )
-  )
-)
-)
+  
