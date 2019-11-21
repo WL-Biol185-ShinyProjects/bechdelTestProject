@@ -55,6 +55,10 @@ library(htmltools)
         br(),
         br(),
         
+        h4(p("All of the Data Points:")),
+        
+        br(),
+        
         plotOutput("allPlot")
         
         ),
