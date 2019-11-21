@@ -84,7 +84,9 @@ library(htmltools)
                  
                  tabsetPanel(type = "tabs", 
                              
-                             tabPanel("Low Budget", plotOutput("lowBudgetPlot"),
+                             tabPanel("Low Budget",
+                                      plotOutput("lowBudgetPlot", hover = hoverOpts(id = "lowBudgetHover")),
+                                      textOutput('hoverPointInfo'),
                                       sliderInput("lowBudget",
                                                   "Low Budget:",
                                                   7000,
