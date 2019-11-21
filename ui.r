@@ -62,7 +62,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
         br(),
         br(),
         
-        textOutput('hoverPointInfoAllPlot'),
+        h4(strong(textOutput('hoverPointInfoAllPlot'))),
         plotOutput("allPlot", hover = hoverOpts(id = "allPlotHover")),
         
         
