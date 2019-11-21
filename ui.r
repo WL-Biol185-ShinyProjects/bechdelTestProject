@@ -77,10 +77,6 @@ moviescleanest <- read.csv("moviescleanest.csv")
         
         ),
         
-    
-        
-        
-        
         tabItem(tabName = "sourcesTab", 
                 
                 h3(strong("Sources")),
@@ -135,7 +131,11 @@ moviescleanest <- read.csv("moviescleanest.csv")
                              
                              tabPanel("Low Budget",
                                       plotOutput("lowBudgetPlot", hover = hoverOpts(id = "lowBudgetHover")),
+
                                       textOutput('hoverPointInfoLow'),
+
+                                      h4(strong(textOutput('hoverPointInfoLow'))),
+
                                       sliderInput("lowBudget",
                                                   "Low Budget:",
                                                   7000,
@@ -145,7 +145,11 @@ moviescleanest <- read.csv("moviescleanest.csv")
                              
                              tabPanel("High Budget",
                                       plotOutput("highBudgetPlot", hover = hoverOpts(id = "highBudgetHover")),
+
                                       textOutput('hoverPointInfoHigh'),
+
+                                      h4(strong(textOutput('hoverPointInfoHigh'))),
+                                      
                                       sliderInput("highBudget",
                                                   "High Budget:",
                                                   100000001,
@@ -155,7 +159,11 @@ moviescleanest <- read.csv("moviescleanest.csv")
                              
                              tabPanel("Domestic Gross",
                                       plotOutput("domgrossPlot", hover = hoverOpts(id = "domgrossHover")),
+
                                       textOutput('hoverPointInfoDomgross'),
+
+                                      h4(strong(textOutput('hoverPointInfoDomgross'))),
+                                      
                                       sliderInput("domgross",
                                                   "Domestic Gross:",
                                                   800,
@@ -165,7 +173,11 @@ moviescleanest <- read.csv("moviescleanest.csv")
                              
                              tabPanel("International Gross", 
                                       plotOutput("intGrossPlot", hover = hoverOpts(id = "intGrossHover")),
+
                                       textOutput('hoverPointInfoIntGross'),
+
+                                      h4(strong(textOutput('hoverPointInfoIntGross'))),
+                                      
                                       sliderInput("intGross",
                                                   "International Gross:",
                                                   800,
