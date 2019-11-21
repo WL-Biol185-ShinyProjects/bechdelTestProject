@@ -113,22 +113,32 @@ library(htmltools)
                  tabsetPanel(type = "tabs", 
                              
                              tabPanel("Low Budget",
+                                      
                                       plotOutput("lowBudgetPlot", hover = hoverOpts(id = "lowBudgetHover")),
-                                      textOutput('hoverPointInfo'),
+                                      textOutput('hoverPointInfoLow'),
+                                      
                                       sliderInput("lowBudget",
                                                   "Low Budget:",
                                                   7000,
                                                   100000000,
                                                   value = c(11000000, 900000000),
                                                   step = 2500)),
-                             tabPanel("High Budget", plotOutput("highBudgetPlot"),
+                             tabPanel("High Budget",
+
+                                      plotOutput("highBudgetPlot", hover = hoverOpts(id = "highBudgetHover")),
+                                      textOutput('hoverPointInfoHigh'),
+                                      
                                       sliderInput("highBudget",
                                                   "High Budget:",
                                                   100000001,
                                                   425000000,
                                                   value = c(115000000, 242000000),
                                                   step = 2500)),
-                             tabPanel("Domestic Gross", plotOutput("domGrossPlot"),
+                             tabPanel("Domestic Gross",
+                                      
+                                      plotOutput("domGrossBudgetPlot", hover = hoverOpts(id = "domGrossBudgetHover")),
+                                      textOutput('hoverPointInfoDomGross'),
+                                      
                                       sliderInput("domGross",
                                                   "Domestic Gross:",
                                                   800,
