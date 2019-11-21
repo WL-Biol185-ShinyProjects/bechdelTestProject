@@ -26,7 +26,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
 
       dashboardBody(
         tabItems(
-        tabItem((            tabName = "homeTab"), 
+        tabItem((tabName = "homeTab"), 
        
               h3(strong("What is the Bechdel Test?")),
        
