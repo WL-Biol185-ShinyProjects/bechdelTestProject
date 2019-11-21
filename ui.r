@@ -107,7 +107,6 @@ shinyUI(fluidPage(
         ),
         
         tabItem(tabName = "dataTab",
-<<<<<<< HEAD
              sidebarLayout(
                sidebarPanel(
                  radioButtons("dist", "Reason for Failure:", 
@@ -120,8 +119,8 @@ shinyUI(fluidPage(
                               c("No Named Women Characters" = "nowomen",
                                 "No Women Talking"          = "notalk",
                                 "Talk Only About Men"       = "men",
-                                "Passed Bechdel Test"       = "ok"
-=======
+                                "Passed Bechdel Test"       = "ok",
+
                 
                 sidebarLayout(
                   
@@ -132,7 +131,6 @@ shinyUI(fluidPage(
                                    "No Women Talking"          = "notalk",
                                    "Talk Only About Men"       = "men",
                                    "Passed Bechdel Test"       = "ok"
->>>>>>> 24a33c87a0e176f9adaebf563dce4a6eb97e5932
                                  )),
                     
                     br(),
@@ -193,7 +191,6 @@ shinyUI(fluidPage(
                     )
                   )
                 )
-<<<<<<< HEAD
                )
               )
              )
@@ -201,12 +198,7 @@ shinyUI(fluidPage(
            )
           )
          )
-        
-=======
         )
       )
-    )
-  )
-)
-)
->>>>>>> 24a33c87a0e176f9adaebf563dce4a6eb97e5932
+    
+
