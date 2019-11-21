@@ -37,8 +37,32 @@ library(htmltools)
         plotOutput("allPlot")
         
         ),
-        tabItem(tabName = "sourcesTab", "sources will go here"),
+        
+        tabItem(tabName = "sourcesTab", 
+                strong("Sources"),
+                
+                br(),
+                br(),
+                
+                a("About Bechdel Test and Original Comic Strip", href = "wwww.npr.org/templates/story/story.php?storyId=94202522"),
+                
+                br(),
+                br(),
+                
+                a("Article Where Data is From", href = "https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/"),
+                
+                br(),
+                br(),
+                
+                a("Github for Data", href = "https://github.com/fivethirtyeight/data/tree/master/bechdel")
+                
+                
+                ),
+                
         tabItem(tabName = "dataTab",
+                
+                
+                
              sidebarLayout(
                sidebarPanel(
                  radioButtons("dist", "Reason for Failure:", 
