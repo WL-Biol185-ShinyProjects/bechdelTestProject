@@ -3,20 +3,23 @@ library(ggplot2)
 library(dplyr)
 
   # Define server logic required to draw a histogram
-  function(input, output, session) {
+  function(input, output) {
   
   output$lowBudgetPlot <- renderPlot({
 
  # Application title
     titlePanel("Bechdel Test Data")
     
+
     # draw the graphs
     moviescleanest %>%
       filter(
-          budget >= input$lowBudget[1] &
-          budget <= input$lowBudget[2]
-            ) %>%
-          ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
+        budget >= input$lowBudget[1] &
+          budget <= input$lowBudget[2] &
+          reason == input$dist &
+          decade == input$dec
+      )  %>%
+       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     })
 
   output$highBudgetPlot <- renderPlot({
@@ -26,10 +29,12 @@ library(dplyr)
     
     # draw the graphs
     moviescleanest %>%
-      filter(
-        budget >= input$highBudget[1] &
-        budget <= input$highBudget[2] 
-      ) %>%
+    filter(
+      budget >= input$highBudget[1] &
+        budget <= input$highBudget[2] &
+        reason == input$dist &
+        decade == input$dec
+    ) %>%
       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     
   })
@@ -42,9 +47,11 @@ library(dplyr)
     # draw the graphs
     moviescleanest %>%
       filter(
-        domgross >= input$domGross[1] &
-          domgross <= input$domGross[2]
-            ) %>%
+        budget >= input$domGross[1] &
+          budget <= input$domGross[2] &
+          reason == input$dist &
+          decade == input$dec
+      ) %>%
     ggplot(aes(year, domgross)) + geom_point() + xlim(1970, 2013)
     
   })
@@ -57,11 +64,23 @@ library(dplyr)
     # draw the graphs
     moviescleanest %>%
       filter(
-        intgross >= input$intGross[1] &
-        intgross <= input$intGross[2]
-           ) %>%
+        budget >= input$intGross[1] &
+          budget <= input$intGross[2] &
+          reason == input$dist &
+          decade == input$dec
+      ) %>%
     ggplot(aes(year, intgross)) + geom_point() + xlim(1970, 2013)
     
   })
- } 
+  
+  output$allPlot <- renderPlot({
+  
+    moviescleanest %>%
+      ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
+    
+  })
+    
+  } 
+
+ 
   
