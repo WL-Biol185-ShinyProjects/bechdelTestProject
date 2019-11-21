@@ -12,18 +12,19 @@ moviescleanest <- read.csv("moviescleanest.csv")
 # Define UI for application that draws a histogram
 shinyUI(fluidPage( 
   
-  # Application title
-  ui <- dashboardPage(
-    dashboardHeader(title = "Bechdel Test"),
-    
-    # Making tabs on sidebar
-    dashboardSidebar(
-      sidebarMenu(
-        menuItem("Home",    tabName = "homeTab"),
-        menuItem("Data",    tabName = "dataTab"),
-        menuItem("Sources", tabName = "sourcesTab")
-      )
-    ),
+# Application title
+    ui <- dashboardPage(
+      dashboardHeader(title = "Bechdel Test"),
+      
+# Making tabs on sidebar
+      dashboardSidebar(
+        sidebarMenu(
+         menuItem("Home",    tabName = "homeTab"),
+         menuItem("Data",    tabName = "dataTab"),
+         menuItem("Sources", tabName = "sourcesTab")
+        )
+      ),
+  
     
     dashboardBody(
       tabItems(
@@ -191,6 +192,7 @@ shinyUI(fluidPage(
                     )
                   )
                 )
+<<<<<<< HEAD
                )
               )
              )
@@ -202,3 +204,12 @@ shinyUI(fluidPage(
       )
     
 
+=======
+              )
+            )
+          )
+        )
+      )
+    )
+  
+>>>>>>> 4e23c0ef97c63b26f15d31f7c7176c62e69936df
