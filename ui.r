@@ -39,9 +39,23 @@ library(htmltools)
         ),
         
         tabItem(tabName = "sourcesTab", 
-                strong("Sources")
+                strong("Sources"),
                 
-    
+                br(),
+                br(),
+                
+                a("About Bechdel Test and Original Comic Strip", href = "wwww.npr.org/templates/story/story.php?storyId=94202522"),
+                
+                br(),
+                br(),
+                
+                a("Article Where Data is From", href = "https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/"),
+                
+                br(),
+                br(),
+                
+                a("Github for Data", href = "https://github.com/fivethirtyeight/data/tree/master/bechdel")
+                
                 
                 ),
                 
