@@ -28,6 +28,7 @@ library(dplyr)
     titlePanel("Bechdel Test Data")
     
     # draw the graphs
+    moviescleanest %>%
     filter(
       budget >= input$highBudget[1] &
         budget <= input$highBudget[2] &

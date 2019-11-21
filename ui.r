@@ -45,8 +45,8 @@ library(htmltools)
                               c("No Named Women Characters" = "nowomen",
                                 "No Women Talking"          = "notalk",
                                 "Talk Only About Men"       = "men",
-                                "Passed Bechdel Test"       = "ok",
-                                "All"                       = "All")),
+                                "Passed Bechdel Test"       = "ok"
+                                 )),
                  br(),
                  
                  radioButtons("dec", "Decade:", 
