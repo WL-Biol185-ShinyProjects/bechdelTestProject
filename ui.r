@@ -12,13 +12,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
 # Define UI for application that draws a histogram
 shinyUI(fluidPage( 
   
-# Add Map
-  library(leaflet),
-  
-  fluidPage(
-    # map output
-    leafletOutput("worldMap"),
-  
+
 # Application title
     ui <- dashboardPage(
       dashboardHeader(title = "Bechdel Test"),
