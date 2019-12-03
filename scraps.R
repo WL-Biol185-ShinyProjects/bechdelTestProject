@@ -80,7 +80,22 @@ d <- reactive({
       addTiles("OpenStreetMap.Mapnik") %>%
       addCircles(label = paste("Movie=", moviescleanest$Title)
       )
+    # Add Map
+    output$movieMap <- renderLeaflet ({
+      leaflet(data = moviescleanest) %>% 
+        addTiles("OpenStreetMap.Mapnik") %>%
+        addCircles(label = paste("Movie=", moviescleanest$Title)
+        )})
+    output$hoverPointInfoMap <- renderText({
+      mapHover <- nearPoints(moviescleanest, input$mapHover)
+      as.character (mapHover$title
+      )
+    })
   #ui map stuff
     tabPanel("Map",
              leafletOutput("movieMap", hover = hoverOpts(id = "mapHover")), 
              textOutput("hoverPointInfoMap")
+             tabPanel("Map",
+                      leafletOutput("movieMap", hover = hoverOpts(id = "mapHover")), 
+                      textOutput("hoverPointInfoMap"))
+             

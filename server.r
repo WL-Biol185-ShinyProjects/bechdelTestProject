@@ -1,6 +1,9 @@
 library(shiny)
 library(ggplot2)
 library(dplyr)
+library(leaflet)
+library(mapdata)
+library(maps)
 
 moviescleanest <- read.csv("moviescleanest.csv")
 
@@ -13,7 +16,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
     titlePanel("Bechdel Test Data")
     
 
-    # draw the graphs
+  # draw the graphs
     moviescleanest %>%
       filter(
         budget >= input$lowBudget[1] &
@@ -122,7 +125,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
   })
   
-# Add Map
+
   
       
      } 

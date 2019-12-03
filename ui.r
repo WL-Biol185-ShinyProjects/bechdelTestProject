@@ -4,6 +4,8 @@ library(shinydashboard)
 library(tidyverse)
 library(ggplot2)
 library(htmltools)
+library(leaflet)
+
 
 # Pulling Up Data Frame
 
@@ -22,7 +24,6 @@ shinyUI(fluidPage(
         sidebarMenu(
          menuItem("Home",    tabName = "homeTab"),
          menuItem("Data",    tabName = "dataTab"),
-         menuItem("Map",     tabName = "mapTab"),
          menuItem("Sources", tabName = "sourcesTab")
          
         )
@@ -174,7 +175,6 @@ shinyUI(fluidPage(
                                                      500000000,
                                                      value = c(100000000, 200000000),
                                                      step = 2500))
-                               
                                                                               
                     
                   )
