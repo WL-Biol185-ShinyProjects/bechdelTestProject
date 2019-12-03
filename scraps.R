@@ -70,3 +70,17 @@ d <- reactive({
       decade == input$dec
   ) %>%
 >>>>>>> f345be431ede76a8e47eaf89c85b539372ba8536
+  
+  
+  
+  
+#server map stuff
+  output$worldMap <- renderLeaflet ({
+    leaflet(data = moviescleanest) %>% 
+      addTiles("OpenStreetMap.Mapnik") %>%
+      addCircles(label = paste("Movie=", moviescleanest$Title)
+      )
+  #ui map stuff
+    tabPanel("Map",
+             leafletOutput("movieMap", hover = hoverOpts(id = "mapHover")), 
+             textOutput("hoverPointInfoMap")
