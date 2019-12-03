@@ -3,6 +3,7 @@
 library(tidyverse)
 library(ggplot2)
 library(shiny)
+library(tibble)
 
 # download data
 movies <- read_csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/bechdel/movies.csv", na = "#N/A") 
@@ -47,3 +48,17 @@ colnames(moviescleanest)[colnames(moviescleanest) == "clean_test"] <- "reason"
 colnames(moviescleanest)[colnames(moviescleanest) == "decade code"] <- "decade"
 
 write.csv(moviescleanest, "moviescleanest.csv")
+
+#making map dataset
+totalMapData <- moviescleanest %>%
+  select(2) %>%
+  add_column(number = , .before = title)
+
+
+
+
+
+  
+
+
+
