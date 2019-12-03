@@ -22,7 +22,6 @@ shinyUI(fluidPage(
         sidebarMenu(
          menuItem("Home",    tabName = "homeTab"),
          menuItem("Data",    tabName = "dataTab"),
-         menuItem("Map",    tabName = "mapTab"),
          menuItem("Map",     tabName = "mapTab"),
          menuItem("Sources", tabName = "sourcesTab")
          
@@ -32,7 +31,7 @@ shinyUI(fluidPage(
     
     dashboardBody(
       tabItems(
-        tabItem((            tabName = "homeTab"), 
+        tabItem((       tabName = "homeTab"), 
                 
                 h3(strong("What is the Bechdel Test?")),
                 
@@ -185,8 +184,9 @@ shinyUI(fluidPage(
               )
              )
             )
-)
-)
+           )
+          )
+
            
         
         
