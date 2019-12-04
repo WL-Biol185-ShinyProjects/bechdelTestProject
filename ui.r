@@ -22,7 +22,6 @@ shinyUI(fluidPage(
         sidebarMenu(
          menuItem("Home",    tabName = "homeTab"),
          menuItem("Data",    tabName = "dataTab"),
-         menuItem("Map",     tabName = "mapTab"),
          menuItem("Sources", tabName = "sourcesTab")
          
         )

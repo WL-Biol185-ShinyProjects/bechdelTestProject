@@ -13,6 +13,7 @@ moviesclean$title <- gsub("&amp;", "&", moviesclean$title)
 moviesclean$title <- gsub( "&#39;", "'", moviesclean$title)
 
 
+
 #removing IMDB
 moviesclean$imdb <- NULL
 
@@ -32,6 +33,8 @@ moviescleanest$title <- gsub("&uuml;" , "u", moviesclean$title)
 moviescleanest$title <- gsub("&agrave;" , "a" , moviesclean$title)
 moviescleanest$title <- gsub("&aring;" , "a" , moviesclean$title)
 moviescleanest$title <- gsub("&auml;" , "a" , moviesclean$title)
+
+
 
 #get rid of code column
 moviescleanest$code <- NULL
