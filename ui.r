@@ -29,7 +29,7 @@ shinyUI(fluidPage(
   
     dashboardBody(
       tabItems(
-        tabItem((       tabName = "homeTab"), 
+        tabItem(tabName = "homeTab", 
                 
                 h3(strong("What is the Bechdel Test?")),
                 
@@ -103,7 +103,7 @@ shinyUI(fluidPage(
                 br(),
                 br(),
                 
-                h4((downloadButton(dataTable, label = "Download Our Clean Data")),
+                (downloadButton("dataTable", label = "Download Our Clean Data"))
                   
                 
         ),
@@ -189,8 +189,8 @@ shinyUI(fluidPage(
               )
              )
             )
-           )
-          )
+))
+
 
            
         

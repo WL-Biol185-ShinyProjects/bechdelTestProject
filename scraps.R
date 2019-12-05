@@ -98,4 +98,14 @@ d <- reactive({
              tabPanel("Map",
                       leafletOutput("movieMap", hover = hoverOpts(id = "mapHover")), 
                       textOutput("hoverPointInfoMap"))
+            
              
+              # download button
+             output$dataTable <- downloadHandler(
+               filename = function() {
+                 "moviescleanest.csv"
+               },
+               content = function(file) {
+                 write.csv(moviescleanest, file)
+               }
+             )

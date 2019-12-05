@@ -15,10 +15,6 @@ moviescleanest <- read.csv("moviescleanest.csv")
  # Application title
     titlePanel("Bechdel Test Data")
     
-
-
-  # draw the graphs
-
     # draw the graphs
 
     moviescleanest %>%
@@ -40,8 +36,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   
   output$highBudgetPlot <- renderPlot({
     
-    # Application title
-    titlePanel("Bechdel Test Data")
+
     
     # draw the graphs
     moviescleanest %>%
@@ -86,8 +81,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   
   output$intGrossPlot <- renderPlot({
     
-    # Application title
-    titlePanel("Bechdel Test Data")
+  
     
     # draw the graphs
     moviescleanest %>%
@@ -120,17 +114,21 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
     allPlotHover <- nearPoints(moviescleanest, input$allPlotHover)
     
-    as.character (allPlotHover$title)
+    as.character (paste(allPlotHover$title, collapse = ", "))
     
     
   })
   
   # download button
   output$dataTable <- downloadHandler(
+    filename = function() {
+      "moviescleanest.csv"
+    },
     content = function(file) {
       write.csv(moviescleanest, file)
     }
-    )
+  )
+  
   
 
   }
