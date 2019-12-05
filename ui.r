@@ -99,7 +99,12 @@ shinyUI(fluidPage(
                 br(),
                 
                 a(h4("Github for Data"),
-                  href  = "https://github.com/fivethirtyeight/data/tree/master/bechdel")
+                  href  = "https://github.com/fivethirtyeight/data/tree/master/bechdel"),
+                br(),
+                br(),
+                
+                h4((downloadButton(dataTable, label = "Download Our Clean Data")),
+                  
                 
         ),
         
