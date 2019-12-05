@@ -86,7 +86,7 @@ shinyUI(fluidPage(
                 br(),
                 
                 a(h4("About Bechdel Test and Original Comic Strip"), 
-                  href  = "wwww.npr.org/templates/story/story.php?storyId=94202522"),
+                  href  = "https://npr.org/templates/story/story.php?storyId=94202522"),
                 
                 br(),
                 br(),
