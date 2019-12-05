@@ -26,7 +26,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   output$hoverPointInfoLow <- renderText({
     
     lowBudgetHover <- nearPoints(moviescleanest, input$lowBudgetHover)
-    as.character (lowBudgetHover$title)
+    as.character (paste(lowBudgetHover$title, collapse = ", "))
     
                                           })
   
@@ -50,7 +50,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   output$hoverPointInfoHigh <- renderText({
     
     highBudgetHover <- nearPoints(moviescleanest, input$highBudgetHover)
-    as.character (highBudgetHover$title)
+    as.character (paste(highBudgetHover$title, collapse = ", "))
     
                                           })
   
@@ -72,7 +72,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
 
     domgrossHover <- nearPoints(moviescleanest, input$domgrossHover)
 
-    as.character (domgrossHover$title)
+    as.character (paste(domgrossHover$title, collapse = ", "))
     
                                                 })
   
@@ -97,7 +97,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
     intGrossHover <- nearPoints(moviescleanest, input$intGrossHover)
     
-    as.character (intGrossHover$title)
+    as.character (paste(intGrossHover$title, collapse = ", "))
     
                                               })
   
@@ -112,7 +112,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
     allPlotHover <- nearPoints(moviescleanest, input$allPlotHover)
     
-    as.character (allPlotHover$title)
+    as.character (paste(allPlotHover$title, collapse = ", "))
     
                                               })
       
