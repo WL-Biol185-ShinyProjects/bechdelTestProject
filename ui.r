@@ -72,7 +72,7 @@ shinyUI(fluidPage(
                 
                 br(),
                 
-                textOutput('hoverPointInfoAllPlot'),
+                h4(strong(textOutput('hoverPointInfoAllPlot'))),
                 
                 plotOutput("allPlot", hover = hoverOpts(id = "allPlotHover")),
                 
@@ -136,7 +136,7 @@ shinyUI(fluidPage(
                                 
                                 tabPanel("Low Budget",
                                          plotOutput("lowBudgetPlot", hover = hoverOpts(id = "lowBudgetHover")),
-                                         textOutput('hoverPointInfoLow'),
+                                         h4(strong(textOutput('hoverPointInfoLow'))),
                                          sliderInput("lowBudget",
                                                      "Low Budget:",
                                                      7000,
@@ -146,7 +146,7 @@ shinyUI(fluidPage(
                                 
                                 tabPanel("High Budget",
                                          plotOutput("highBudgetPlot", hover = hoverOpts(id = "highBudgetHover")),
-                                         textOutput('hoverPointInfoHigh'),
+                                         h4(strong(textOutput('hoverPointInfoHigh'))),
                                          sliderInput("highBudget",
                                                      "High Budget:",
                                                      100000001,
@@ -156,7 +156,7 @@ shinyUI(fluidPage(
                                 
                                 tabPanel("Domestic Gross",
                                          plotOutput("domgrossPlot", hover = hoverOpts(id = "domgrossHover")),
-                                         textOutput('hoverPointInfoDomgross'),
+                                         h4(strong(textOutput('hoverPointInfoDomgross'))),
                                          sliderInput("domgross",
                                                      "Domestic Gross:",
                                                      800,
@@ -166,7 +166,7 @@ shinyUI(fluidPage(
                                 
                                 tabPanel("International Gross", 
                                          plotOutput("intGrossPlot", hover = hoverOpts(id = "intGrossHover")),
-                                         textOutput('hoverPointInfoIntGross'),
+                                         h4(strong(textOutput('hoverPointInfoIntGross'))),
                                          sliderInput("intGross",
                                                      "International Gross:",
                                                      800,
