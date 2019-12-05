@@ -34,7 +34,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   output$hoverPointInfoLow <- renderText({
     
     lowBudgetHover <- nearPoints(moviescleanest, input$lowBudgetHover)
-    as.character (paste(lowBudgetHover$title, collapse = ", "))
+    as.character (lowBudgetHover$title)
     
                                           })
   
@@ -58,7 +58,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
   output$hoverPointInfoHigh <- renderText({
     
     highBudgetHover <- nearPoints(moviescleanest, input$highBudgetHover)
-    as.character (paste(highBudgetHover$title, collapse = ", "))
+    as.character (highBudgetHover$title)
     
                                           })
   
@@ -80,7 +80,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
 
     domgrossHover <- nearPoints(moviescleanest, input$domgrossHover)
 
-    as.character (paste(domgrossHover$title, collapse = ", "))
+    as.character (domgrossHover$title)
     
                                                 })
   
@@ -105,7 +105,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
     intGrossHover <- nearPoints(moviescleanest, input$intGrossHover)
     
-    as.character (paste(intGrossHover$title, collapse = ", "))
+    as.character (intGrossHover$title)
     
                                               })
   
@@ -120,18 +120,21 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
     allPlotHover <- nearPoints(moviescleanest, input$allPlotHover)
     
-    as.character (paste(allPlotHover$title, collapse = ", "))
+    as.character (allPlotHover$title)
     
-
+    
   })
   
-
+  # download button
+  output$dataTable <- downloadHandler(
+    content = function(file) {
+      write.csv(moviescleanest, file)
+    }
+    )
   
 
-                                              })
-
-      
-     } 
+    })
+    } 
 
  
   
