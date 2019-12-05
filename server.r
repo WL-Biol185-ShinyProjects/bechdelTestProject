@@ -122,6 +122,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
     
     as.character (allPlotHover$title)
     
+<<<<<<< HEAD
     
   })
   
@@ -135,6 +136,11 @@ moviescleanest <- read.csv("moviescleanest.csv")
 
     })
     } 
+=======
+                                              })
+   
+     } 
+>>>>>>> 346627a05e53bb75843e6e35ff12c5307a14a51c
 
  
   
