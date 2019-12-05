@@ -115,7 +115,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
     as.character (paste(allPlotHover$title, collapse = ", "))
     
                                               })
-      
+   
      } 
 
  
