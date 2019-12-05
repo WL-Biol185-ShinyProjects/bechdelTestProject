@@ -1,4 +1,3 @@
-
 library(shiny)
 library(shinydashboard)
 library(tidyverse)
@@ -14,7 +13,6 @@ moviescleanest <- read.csv("moviescleanest.csv")
 # Define UI for application that draws a histogram
 shinyUI(fluidPage( 
   
-
 # Application title
     ui <- dashboardPage(
       dashboardHeader(title = "Bechdel Test"),
@@ -26,10 +24,9 @@ shinyUI(fluidPage(
          menuItem("Data",    tabName = "dataTab"),
          menuItem("Sources", tabName = "sourcesTab")
          
-        )
+                   )
       ),
   
-    
     dashboardBody(
       tabItems(
         tabItem((       tabName = "homeTab"), 
@@ -74,19 +71,14 @@ shinyUI(fluidPage(
                 
                 br(),
                 
-                textOutput('hoverPointInfoAllPlot'),
+                h4(strong(textOutput('hoverPointInfoAllPlot'))),
                 
                 plotOutput("allPlot", hover = hoverOpts(id = "allPlotHover")),
-                
                 
                 br()
                 
         ),
         
-        
-        
-        
-
         tabItem(tabName = "sourcesTab", 
                 
                 h3(strong("Sources")),
@@ -95,7 +87,7 @@ shinyUI(fluidPage(
                 br(),
                 
                 a(h4("About Bechdel Test and Original Comic Strip"), 
-                  href  = "wwww.npr.org/templates/story/story.php?storyId=94202522"),
+                  href  = "https://npr.org/templates/story/story.php?storyId=94202522"),
                 
                 br(),
                 br(),
@@ -115,21 +107,23 @@ shinyUI(fluidPage(
              sidebarLayout(
                sidebarPanel(
                  radioButtons("dist", "Reason for Failure:", 
-                              c("No Named Women Characters" = "nowomen",
+                              c("Passed Bechdel Test"       = "ok",
+                                "No Named Women Characters" = "nowomen",
                                 "No Women Talking"          = "notalk",
-                                "Talk Only About Men"       = "men",
-                                "Passed Bechdel Test"       = "ok"
+                                "Talk Only About Men"       = "men"
+                                
                               )),
         
                  br(),
                              
-                    
                     radioButtons("dec", "Decade:", 
-                                 c("1970's" = "1970s",
-                                   "1980's" = "1980s",
-                                   "1990's" = "1990s",
+                                 c("2010's" = "2010s",
                                    "2000's" = "2000s",
-                                   "2010's" = "2010s"))
+                                   "1990's" = "1990s",
+                                   "1980's" = "1980s",
+                                   "1970's" = "1970s"
+                                   
+                                   ))
                   ),
                
             # Show a plot of the generated distribution
@@ -137,46 +131,55 @@ shinyUI(fluidPage(
                     tabsetPanel(type = "tabs", 
                                 
                                 tabPanel("Low Budget",
-                                         plotOutput("lowBudgetPlot", hover = hoverOpts(id = "lowBudgetHover")),
-                                         textOutput('hoverPointInfoLow'),
+                                         plotOutput("lowBudgetPlot",
+                                                    hover  = hoverOpts(id = "lowBudgetHover")),
+                                         h4(strong(textOutput('hoverPointInfoLow'))),
                                          sliderInput("lowBudget",
                                                      "Low Budget:",
                                                      7000,
                                                      100000000,
                                                      value = c(11000000, 900000000),
-                                                     step = 2500)),
+                                                     step  = 2500)),
                                 
                                 tabPanel("High Budget",
-                                         plotOutput("highBudgetPlot", hover = hoverOpts(id = "highBudgetHover")),
-                                         textOutput('hoverPointInfoHigh'),
+                                         plotOutput("highBudgetPlot",
+                                                     hover = hoverOpts(id = "highBudgetHover")),
+                                         h4(strong(textOutput('hoverPointInfoHigh'))),
                                          sliderInput("highBudget",
                                                      "High Budget:",
                                                      100000001,
                                                      425000000,
                                                      value = c(115000000, 242000000),
-                                                     step = 2500)),
+                                                     step  = 2500)),
                                 
                                 tabPanel("Domestic Gross",
-                                         plotOutput("domgrossPlot", hover = hoverOpts(id = "domgrossHover")),
-                                         textOutput('hoverPointInfoDomgross'),
+                                         plotOutput("domgrossPlot",
+                                                     hover = hoverOpts(id = "domgrossHover")),
+                                         h4(strong(textOutput('hoverPointInfoDomgross'))),
                                          sliderInput("domgross",
                                                      "Domestic Gross:",
                                                      800,
                                                      500000000,
                                                      value = c(100000000, 200000000),
-                                                     step = 2500)),
+                                                     step  = 2500)),
                                 
                                 tabPanel("International Gross", 
-                                         plotOutput("intGrossPlot", hover = hoverOpts(id = "intGrossHover")),
-                                         textOutput('hoverPointInfoIntGross'),
+                                         plotOutput("intGrossPlot",
+                                                     hover = hoverOpts(id = "intGrossHover")),
+                                         h4(strong(textOutput('hoverPointInfoIntGross'))),
                                          sliderInput("intGross",
                                                      "International Gross:",
                                                      800,
                                                      500000000,
                                                      value = c(100000000, 200000000),
+<<<<<<< HEAD
                                                      step = 2500))
                                                                               
                     
+=======
+                                                     step  = 2500))
+
+>>>>>>> e2ed35720c4f2e14a8af4ed3daa4e14a73e8465d
                   )
                  )
                 )
