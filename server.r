@@ -1,6 +1,6 @@
 library(shiny)
 library(ggplot2)
-library(dplyr)   
+library(dplyr)
 
 moviescleanest <- read.csv("moviescleanest.csv")
 
