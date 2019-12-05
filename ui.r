@@ -174,10 +174,7 @@ shinyUI(fluidPage(
                                                      value = c(100000000, 200000000),
 
                                                      step = 2500))
-                                                                              
-                    
-
-                                                     step  = 2500))
+                                                                            
 
 
                   )
