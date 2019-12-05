@@ -113,21 +113,26 @@ shinyUI(fluidPage(
              sidebarLayout(
                sidebarPanel(
                  radioButtons("dist", "Reason for Failure:", 
-                              c("No Named Women Characters" = "nowomen",
+                              c("Passed Bechdel Test"       = "ok",
+                                "No Named Women Characters" = "nowomen",
                                 "No Women Talking"          = "notalk",
-                                "Talk Only About Men"       = "men",
-                                "Passed Bechdel Test"       = "ok"
+                                "Talk Only About Men"       = "men"
+                                
                               )),
         
                  br(),
                              
                     
                     radioButtons("dec", "Decade:", 
-                                 c("1970's" = "1970s",
-                                   "1980's" = "1980s",
-                                   "1990's" = "1990s",
+                                 c("2010's" = "2010s",
                                    "2000's" = "2000s",
-                                   "2010's" = "2010s"))
+                                   "1990's" = "1990s",
+                                   "1980's" = "1980s",
+                                   "1970's" = "1970s"
+                                   
+                                   
+                                   
+                                   ))
                   ),
                
             # Show a plot of the generated distribution
