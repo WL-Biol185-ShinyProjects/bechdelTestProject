@@ -5,18 +5,18 @@ library(leaflet)
 library(mapdata)
 library(maps)
 
-moviescleanest <- read.csv("moviescleanest.csv")
+  # Add Data Table
+    moviescleanest <- read.csv("moviescleanest.csv")
 
-  # Define server logic required to draw a histogram
-  function(input, output) {
+  # Define Server Logic Required to Draw a Histogram
+    function(input, output) {
   
-  output$lowBudgetPlot <- renderPlot({
+    output$lowBudgetPlot <- renderPlot({
 
- # Application title
+  # Application title
     titlePanel("Bechdel Test Data")
     
-    # draw the graphs
-
+  # Low Budget Graphs
     moviescleanest %>%
       filter(
         budget   >= input$lowBudget[1] &
@@ -24,21 +24,21 @@ moviescleanest <- read.csv("moviescleanest.csv")
           reason == input$dist &
           decade == input$dec
             )  %>%
-       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
+    ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
              })
 
-  output$hoverPointInfoLow <- renderText({
+    output$hoverPointInfoLow <- renderText({
     
     lowBudgetHover <- nearPoints(moviescleanest, input$lowBudgetHover)
     as.character (paste(lowBudgetHover$title, collapse = ", "))
     
-                                          })
+            })
   
   output$highBudgetPlot <- renderPlot({
     
 
     
-    # draw the graphs
+    # High Budget Graphs
     moviescleanest %>%
     filter(
       budget   >= input$highBudget[1] &
@@ -48,18 +48,18 @@ moviescleanest <- read.csv("moviescleanest.csv")
            ) %>%
       ggplot(aes(year, budget)) + geom_point() + xlim(1970, 2013)
     
-          })
+           })
   
   output$hoverPointInfoHigh <- renderText({
     
     highBudgetHover <- nearPoints(moviescleanest, input$highBudgetHover)
     as.character (paste(highBudgetHover$title, collapse = ", "))
     
-                                          })
+          })
   
   output$domgrossPlot <- renderPlot({
     
-    # draw the graphs
+    # Domestic Gross Graphs
     moviescleanest %>%
       filter(
         budget   >= input$domgross[1] &
@@ -69,7 +69,7 @@ moviescleanest <- read.csv("moviescleanest.csv")
              ) %>%
     ggplot(aes(year, domgross)) + geom_point() + xlim(1970, 2013)
     
-                                      })
+          })
   
   output$hoverPointInfoDomgross <- renderText({
 
@@ -77,13 +77,13 @@ moviescleanest <- read.csv("moviescleanest.csv")
 
     as.character (paste(domgrossHover$title, collapse = ", "))
     
-                                                })
+          })
   
   output$intGrossPlot <- renderPlot({
     
   
     
-    # draw the graphs
+    # International Gross Graphs
     moviescleanest %>%
       filter(
         budget >= input$intGross[1] &
@@ -93,22 +93,22 @@ moviescleanest <- read.csv("moviescleanest.csv")
              ) %>%
     ggplot(aes(year, intgross)) + geom_point() + xlim(1970, 2013)
     
-                                     })
+         })
   
-  output$hoverPointInfoIntGross <- renderText({
+    output$hoverPointInfoIntGross <- renderText({
     
     intGrossHover <- nearPoints(moviescleanest, input$intGrossHover)
     
     as.character (paste(intGrossHover$title, collapse = ", "))
     
-                                              })
+        })
   
   output$allPlot <- renderPlot({
   
     moviescleanest %>%
       ggplot(aes(year, budget, color = reason)) + geom_point() + xlim(1970, 2013)
     
-                                })
+        })
     
   output$hoverPointInfoAllPlot <- renderText({
     
@@ -117,21 +117,21 @@ moviescleanest <- read.csv("moviescleanest.csv")
     as.character (paste(allPlotHover$title, collapse = ", "))
     
     
-  })
+        })
   
-  # download button
+  # Download Button
   output$dataTable <- downloadHandler(
     filename = function() {
       "moviescleanest.csv"
-    },
+        },
     content = function(file) {
       write.csv(moviescleanest, file)
-    }
-  )
+        }
+        )
   
   
 
-  }
+        }
                                              
 
 
